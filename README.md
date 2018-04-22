@@ -1,3 +1,60 @@
+## Current Strategy
+
+#### Abstract
+- Have logic components that are completely unstyled (logic components)
+- Have base styling that is applied to a component (base components)
+- Have ability to extend base component styles to allow for individual themes (themed components)
+
+#### Concrete
+- Have logic components that are unstyled
+- Have base styling components that wrap logic components and apply universal styles
+- Have theme components that wrap base styled component and apply theme-specific styles
+
+#### Example
+- `/logic/Button.tsx` holds logic of button e.g. knows when to fire onClick handler etc.
+- `/base/Button.tsx` wraps the logic Button component in a base level of styling; which should reflect core styling such as typography
+- `/themes/cp/Button.tsx` wraps the base Button component, allowing for Control-Panel specific styling to be added to the base styled component without affect
+
+
+## Goals
+
+#### Basic Component Design
+- [x] separates pure logic components from styling components
+- [x] allow separate styles to be created
+- [x] presentation components preserve logic component interface
+- [ ] IDE support (shows logic component interface help when using presentation components)
+- [x] extension of base theme (theme hierarchy)
+- [ ] painless and predictable updating of component styles
+
+#### Maintenance
+- [ ] reasonable distribution method
+- [ ] simple versioning
+- [ ] github hook for changes to base components and theme
+- [ ] github hooks for theme changes
+
+#### Advanced Component Design
+- [ ] solution for working with non-presentational components such as Analytics component
+- [ ] grid system as components
+- [ ] responsive design as components
+- [ ] keyframes / animations solution
+
+#### Exposure
+- [ ] Method of surfacing components
+- [ ] Playground capability
+- [ ] Method of surfacing themes
+
+#### Observation
+- [ ] Knowing what apps are using what components
+- [ ] Knowing what components are being used the most
+- [ ] Performance metrics
+
+#### Super Duper Advanced Features
+- [ ] Method of translating a themed component set into web components (so that non-react teams can consume them)
+
+
+
+--------------------------------
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
