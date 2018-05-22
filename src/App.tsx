@@ -19,6 +19,8 @@ import {
   ButtonGroup as BaseButtonGroup,
 } from './base/components';
 
+import StyledButton from './styled/hq/Button';
+
 class App extends React.Component {
   public render() {
     return (
@@ -46,6 +48,12 @@ class App extends React.Component {
             <CPButton type='secondary' size='medium' onClick={this.click.bind(this, 'secondary')}>Secondary</CPButton>
             <CPButton size='small' onClick={this.click.bind(this, 'none')}>None</CPButton>
           </CPButtonGroup>
+          <CPButtonGroup>
+            <StyledButton type="primary">Primary</StyledButton>
+            <StyledButton type="basic" disabled>Primary</StyledButton>
+          </CPButtonGroup>
+        </Container>
+        <Container responsive-3-2-1>
         </Container>
       </div>
     );
