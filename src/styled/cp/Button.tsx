@@ -1,8 +1,18 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Button, IButtonInterface } from '../../base/components';
 
+const baseStyles = {
+    colors: {
+        primary: '#fff',
+    },
+}
+
+const styles = css`
+    color: ${baseStyles.colors.primary}
+`;
+
 export default styled(Button).attrs<IButtonInterface>({})`
-    color: white;
+    ${styles}
     background-color: ${props => {
         switch(props.type) {
             case 'primary': return 'orange';
@@ -14,7 +24,6 @@ export default styled(Button).attrs<IButtonInterface>({})`
     padding: 5px;
     font-family: "Times New Roman", Times, serif;
     letter-spacing: 1px;
-
     :hover {
         background-color: yellow;
     }

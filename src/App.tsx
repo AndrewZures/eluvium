@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './App.css';
 
-import logo from './logo.svg';
+// import logo from './logo.svg';
 
 import {
   Button as LogicButton,
@@ -24,7 +24,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          {/* <img src={logo} className="App-logo" alt="logo" /> */}
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <Container>
