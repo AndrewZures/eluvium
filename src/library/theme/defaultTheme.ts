@@ -14,6 +14,14 @@ export const defaultTheme: ITheme = {
         warning: "#FFD24D",
         warning_hover: "#FFDE7E",
     },
+    position: {
+        center: 'center',
+        end: 'flex-end',
+        space_around: 'space-around',
+        space_between: 'space-between',
+        space_evenly: 'space-evenly',
+        start: 'flex-start',
+    },
     sizing: {
         height: {
             full: '500px',
@@ -23,5 +31,5 @@ export const defaultTheme: ITheme = {
             half_screen: '200px',
             main_content: '600px',
         }
-    }
+    },
 }

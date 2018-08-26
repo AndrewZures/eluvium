@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { ContainerType, IContainerConfig } from './types';
 
 // helpers
-import { chooseColor, chooseHeight, chooseWidth } from '../../theme/helpers';
+import { chooseBackgroundColor, chooseHeight, choosePosition, chooseWidth } from '../../theme/helpers';
 
 // options
 import { backgroundConfig } from './options/background';
@@ -42,7 +42,9 @@ export class Container extends React.PureComponent<IContainerProps> {
 }
 
 const StyledContainer = styled.div.attrs<IContainerConfig>({})`
-    background-color: ${({theme, backgroundColor}) => chooseColor(theme, backgroundColor)};
-    height: ${({theme, height}) => chooseHeight(theme, height)};
-    width: ${({theme, width}) => chooseWidth(theme, width)};
+    display: flex;
+    background-color: ${chooseBackgroundColor};
+    height: ${chooseHeight};
+    width: ${chooseWidth};
+    justify-content: ${choosePosition}
 `

@@ -1,6 +1,7 @@
 export interface ITheme {
     colors: IColors;
     sizing: ISizing;
+    position: IPosition;
 }
 
 export enum ThemeColor {
@@ -50,4 +51,22 @@ export interface ISizing {
         half_screen: string;
         main_content: string;
     }
+}
+
+export interface IPosition {
+    center: string;
+    end: string;
+    space_around: string;
+    space_between: string;
+    space_evenly: string;
+    start: string;
+}
+
+export enum PositionOption {
+    Center = 'center',
+    End = 'end',
+    SpaceAround = 'space_around',
+    SpaceBetween = 'space_between',
+    SpaceEvenly = 'space_evenly',
+    Start = 'start',
 }
