@@ -20,6 +20,7 @@ export const defaultTheme: ITheme = {
         },
         width: {
             full: '100%',
+            half_screen: '200px',
         }
     }
 }

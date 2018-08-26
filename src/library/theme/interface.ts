@@ -19,6 +19,7 @@ export enum ThemeColor {
 
 export enum WidthOption {
     Full = 'full',
+    HalfScreen = 'half_screen',
 }
 
 export enum HeightOption {
@@ -45,5 +46,6 @@ export interface ISizing {
     }
     width: {
         full: string;
+        half_screen: string;
     }
 }
