@@ -3,6 +3,9 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { ContainerType, IContainerConfig } from './types';
 
+// helpers
+import { chooseColor, chooseHeight, chooseWidth } from '../../theme/helpers';
+
 // options
 import { backgroundConfig } from './options/background';
 import { cardConfig } from './options/card';
@@ -37,7 +40,7 @@ export class Container extends React.PureComponent<IContainerProps> {
 }
 
 const StyledContainer = styled.div.attrs<IContainerConfig>({})`
-    background-color: ${({theme, backgroundColor}) => theme.colors[backgroundColor]}
-    height: ${({theme, height}) => theme.sizing.height[height]}
-    width: ${({theme, width}) => theme.sizing.width[width]}
+    background-color: ${({theme, backgroundColor}) => chooseColor(theme, backgroundColor)}
+    height: ${({theme, height}) => chooseHeight(theme, height)}
+    width: ${({theme, width}) => chooseWidth(theme, width)}
 `
