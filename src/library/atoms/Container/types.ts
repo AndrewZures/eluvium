@@ -10,4 +10,5 @@ export enum ContainerType {
     Background = 'background',
     Content = 'content',
     Card = 'card',
+    MainContent = 'main_content',
 }

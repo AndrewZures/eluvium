@@ -16,11 +16,12 @@ export const defaultTheme: ITheme = {
     },
     sizing: {
         height: {
-            full: '90vh',
+            full: '500px',
         },
         width: {
             full: '100%',
             half_screen: '200px',
+            main_content: '600px',
         }
     }
 }

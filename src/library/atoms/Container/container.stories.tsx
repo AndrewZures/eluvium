@@ -24,4 +24,11 @@ storiesOf("Library/Atoms/Component", module)
         <Container config={config} />
       </ThemeProvider>
     );
-  });
+  })
+  .add("main content", () => (
+      <ThemeProvider theme={defaultTheme}>
+        <Container type={ContainerType.Background} >
+          <Container type={ContainerType.MainContent} />
+        </Container>
+      </ThemeProvider>
+  ));

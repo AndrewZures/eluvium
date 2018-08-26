@@ -5,21 +5,22 @@ export interface ITheme {
 
 export enum ThemeColor {
     Background = "background",
-    // Brand,
+    Brand = "brand",
     None = "none",
     Error = "error",
-    // Guide,
-    // Primary,
-    // Secondary,
-    // Stroke,
-    // Success,
-    // Warning,
-    // WarningHover,
+    Guide = "guide",
+    Primary = "primary",
+    Secondary = "secondary",
+    Stroke = "stroke",
+    Success = "success",
+    Warning = "warning",
+    WarningHover = "warning_hover",
 }
 
 export enum WidthOption {
     Full = 'full',
     HalfScreen = 'half_screen',
+    MainContent = 'main_content',
 }
 
 export enum HeightOption {
@@ -47,5 +48,6 @@ export interface ISizing {
     width: {
         full: string;
         half_screen: string;
+        main_content: string;
     }
 }
