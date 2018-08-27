@@ -1,8 +1,10 @@
 import * as React from "react";
 
+import { map } from "lodash";
+
 import { storiesOf } from "@storybook/react";
 import { ThemeProvider } from "styled-components";
-import { defaultTheme } from "../../theme/defaultTheme";
+import { defaultTheme } from '../../theme/defaultTheme';
 import { ThemeColor, WidthOption } from '../../theme/interface';
 import { Container } from "./Container";
 import { ContainerType, IContainerConfig } from './types';
@@ -33,6 +35,15 @@ storiesOf("Library/Atoms/Component", module)
             <div>Div 2</div>
             <div>Div 3</div>
           </Container>
+        </Container>
+      </ThemeProvider>
+  ))
+  .add("palette", () => (
+      <ThemeProvider theme={defaultTheme}>
+        <Container type={ContainerType.Background}>
+            {map(defaultTheme.colors, (k: string, v: ThemeColor) => (
+              <Container key={k} type={ContainerType.Card} config={{ backgroundColor: v }} />
+            ))}
         </Container>
       </ThemeProvider>
   ));

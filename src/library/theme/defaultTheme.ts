@@ -37,11 +37,13 @@ export const defaultTheme: ITheme = {
     sizing: {
         height: {
             full: '500px',
+            small: '50px',
         },
         width: {
             full: '100%',
             half_screen: '200px',
             main_content: '600px',
+            small: '50px',
         }
     },
 }
