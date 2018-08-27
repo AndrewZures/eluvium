@@ -1,4 +1,4 @@
-import { HeightOption, ITheme, ThemeColor, WidthOption } from './interface';
+import { BorderRadiusOption, HeightOption, ITheme, ThemeColor, WidthOption } from './interface';
 
 export function chooseWidth({ theme, width }: { theme: any, width: WidthOption }) {
     return theme.sizing.width[width];
@@ -22,4 +22,8 @@ export function chooseJustifyContent({ theme, position }: { theme: any, position
 
 export function chooseAlignItems({ theme, position }: { theme: any, position: any }) {
     return theme.position.flex.align_items[position.flex.align_items];
+}
+
+export function chooseBorderRadius({ theme, borderRadius }: { theme: any, borderRadius:  BorderRadiusOption }) {
+    return theme.sizing.borderRadius[borderRadius];
 }

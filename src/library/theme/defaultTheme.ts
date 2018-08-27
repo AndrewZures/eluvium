@@ -35,15 +35,21 @@ export const defaultTheme: ITheme = {
         }
    },
     sizing: {
+        borderRadius: {
+            none: null,
+            rounded: '90px',
+            semirounded: '15px',
+            slightly_rounded: '4px',
+        },
         height: {
             full: '500px',
-            small: '50px',
+            small: '56px',
         },
         width: {
             full: '100%',
             half_screen: '200px',
             main_content: '600px',
-            small: '50px',
-        }
+            small: '56px',
+        },
     },
 }

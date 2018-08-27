@@ -55,6 +55,12 @@ export interface ISizing {
         main_content: string;
         small: string;
     }
+    borderRadius: {
+        none: null;
+        rounded: string;
+        semirounded: string;
+        slightly_rounded: string;
+    }
 }
 export interface IPosition {
     flex: IFlex;
@@ -103,4 +109,11 @@ export enum AlignItemsOption {
     Start = 'flex-start',
     End = 'flex-end',
     Stretch = 'stretch',
+}
+
+export enum BorderRadiusOption {
+    None = 'none',
+    Rounded = 'rounded',
+    SemiRounded = 'semirounded',
+    SlightlyRounded = 'slightly_rounded',
 }
