@@ -15,13 +15,18 @@ export const defaultTheme: ITheme = {
         warning_hover: "#FFDE7E",
     },
     position: {
-        center: 'center',
-        end: 'flex-end',
-        space_around: 'space-around',
-        space_between: 'space-between',
-        space_evenly: 'space-evenly',
-        start: 'flex-start',
-    },
+        flex: {
+            justify_content: {
+                center: 'center',
+                end: 'flex-end',
+                none: null,
+                space_around: 'space-around',
+                space_between: 'space-between',
+                space_evenly: 'space-evenly',
+                start: 'flex-start',
+            }
+        }
+   },
     sizing: {
         height: {
             full: '500px',

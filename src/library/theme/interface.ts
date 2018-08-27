@@ -54,19 +54,34 @@ export interface ISizing {
 }
 
 export interface IPosition {
+    flex: IFlex;
+}
+
+export interface IFlex {
+    direction?: string;
+    wrap?: string;
+    justify_content: JustifyContentOption;
+    align_items?: string;
+    align_self?: string;
+    flex?: string;
+}
+
+export interface IJustifyContent {
     center: string;
     end: string;
+    none: null,
     space_around: string;
     space_between: string;
     space_evenly: string;
     start: string;
 }
 
-export enum PositionOption {
+export enum JustifyContentOption {
     Center = 'center',
     End = 'end',
     SpaceAround = 'space_around',
     SpaceBetween = 'space_between',
     SpaceEvenly = 'space_evenly',
     Start = 'start',
+    None = 'none',
 }

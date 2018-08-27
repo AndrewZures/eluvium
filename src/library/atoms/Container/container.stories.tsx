@@ -27,8 +27,12 @@ storiesOf("Library/Atoms/Component", module)
   })
   .add("main content", () => (
       <ThemeProvider theme={defaultTheme}>
-        <Container type={ContainerType.Background} >
-          <Container type={ContainerType.MainContent} />
+        <Container type={ContainerType.Background}>
+          <Container type={ContainerType.MainContent}>
+            <div>Div 1</div>
+            <div>Div 2</div>
+            <div>Div 3</div>
+          </Container>
         </Container>
       </ThemeProvider>
   ));

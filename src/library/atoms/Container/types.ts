@@ -1,10 +1,12 @@
-import { HeightOption, PositionOption, ThemeColor, WidthOption } from '../../theme/interface';
+import { HeightOption, IFlex, ThemeColor, WidthOption } from '../../theme/interface';
 
 export interface IContainerConfig {
     backgroundColor: ThemeColor;
     width: WidthOption;
     height: HeightOption;
-    position: PositionOption,
+    position: {
+        flex: IFlex;
+    }
 }
 
 export enum ContainerType {
