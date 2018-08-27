@@ -1,11 +1,14 @@
-import { HeightOption, IFlex, ThemeColor, WidthOption } from '../../theme/interface';
+import { AlignItemsOption, HeightOption, JustifyContentOption, ThemeColor, WidthOption } from '../../theme/interface';
 
 export interface IContainerConfig {
     backgroundColor: ThemeColor;
     width: WidthOption;
     height: HeightOption;
     position: {
-        flex: IFlex;
+        flex: {
+            align_items: AlignItemsOption,
+            justify_content: JustifyContentOption,
+        }
     }
 }
 

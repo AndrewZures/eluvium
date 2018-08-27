@@ -1,4 +1,4 @@
-import { HeightOption, IPosition, ITheme, ThemeColor, WidthOption } from './interface';
+import { HeightOption, ITheme, ThemeColor, WidthOption } from './interface';
 
 export function chooseWidth({ theme, width }: { theme: any, width: WidthOption }) {
     return theme.sizing.width[width];
@@ -16,6 +16,10 @@ export function chooseBackgroundColor({ theme, backgroundColor }: { theme: any, 
     return chooseColor(theme, backgroundColor);
 }
 
-export function choosePosition({ theme, position }: { theme: any, position: IPosition }) {
+export function chooseJustifyContent({ theme, position }: { theme: any, position: any }) {
     return theme.position.flex.justify_content[position.flex.justify_content];
+}
+
+export function chooseAlignItems({ theme, position }: { theme: any, position: any }) {
+    return theme.position.flex.align_items[position.flex.align_items];
 }

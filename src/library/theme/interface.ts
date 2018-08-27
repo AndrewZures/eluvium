@@ -52,7 +52,6 @@ export interface ISizing {
         main_content: string;
     }
 }
-
 export interface IPosition {
     flex: IFlex;
 }
@@ -60,8 +59,8 @@ export interface IPosition {
 export interface IFlex {
     direction?: string;
     wrap?: string;
-    justify_content: JustifyContentOption;
-    align_items?: string;
+    justify_content: IJustifyContent;
+    align_items: IAlignItems;
     align_self?: string;
     flex?: string;
 }
@@ -84,4 +83,20 @@ export enum JustifyContentOption {
     SpaceEvenly = 'space_evenly',
     Start = 'start',
     None = 'none',
+}
+
+export interface IAlignItems {
+    baseline: string;
+    center: string;
+    start: string;
+    end: string;
+    stretch: string;
+}
+
+export enum AlignItemsOption {
+    Baseline = 'baseline',
+    Center = 'center',
+    Start = 'flex-start',
+    End = 'flex-end',
+    Stretch = 'stretch',
 }
