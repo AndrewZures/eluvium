@@ -23,11 +23,24 @@ export enum WidthOption {
     Full = 'full',
     HalfScreen = 'half_screen',
     MainContent = 'main_content',
+    Input = 'input',
 }
 
 export enum HeightOption {
     Full = 'full',
     Small = 'small',
+    Input = 'input',
+}
+
+export enum InputHeightOption {
+    Medium = 'medium'
+}
+
+export enum InputWidthOptions {
+    Medium = 'medium',
+    SmallMedium = 'small_medium',
+    Small = 'small',
+    Tiny = 'tiny',
 }
 
 export interface IColors {
@@ -48,12 +61,25 @@ export interface ISizing {
     height: {
         full: string;
         small: string;
-    }
+        input: string;
+    },
+    inputSizing: {
+        height: {
+            medium: string;
+        },
+        width: {
+            small: string;
+            medium: string;
+            small_medium: string;
+            tiny: string;
+        }
+    },
     width: {
         full: string;
         half_screen: string;
         main_content: string;
         small: string;
+        input: string;
     }
     borderRadius: {
         none: null;

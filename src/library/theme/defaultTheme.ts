@@ -43,11 +43,25 @@ export const defaultTheme: ITheme = {
         },
         height: {
             full: '500px',
-            small: '56px',
+            input: '36px',
+            small: '400px',
+        },
+        inputSizing: {
+            height: {
+                medium: '36px',
+            },
+            width: {
+                medium: '400px',
+                small: '16px',
+                small_medium: '24px',
+                tiny: '8px'
+
+            },
         },
         width: {
             full: '100%',
             half_screen: '200px',
+            input: '400px',
             main_content: '600px',
             small: '56px',
         },

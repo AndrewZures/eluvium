@@ -1,4 +1,4 @@
-import { BorderRadiusOption, HeightOption, ITheme, ThemeColor, WidthOption } from './interface';
+import { BorderRadiusOption, HeightOption, ThemeColor, WidthOption } from './interface';
 
 export function chooseWidth({ theme, width }: { theme: any, width: WidthOption }) {
     return theme.sizing.width[width];
@@ -8,12 +8,12 @@ export function chooseHeight({ theme, height }: { theme: any, height: HeightOpti
     return theme.sizing.height[height];
 }
 
-export function chooseColor(theme: ITheme, color: ThemeColor) {
+export function chooseColor({ theme, color }: { theme: any, color: ThemeColor }) {
     return theme.colors[color];
 }
 
 export function chooseBackgroundColor({ theme, backgroundColor }: { theme: any, backgroundColor: ThemeColor }) {
-    return chooseColor(theme, backgroundColor);
+    return chooseColor({theme, color: backgroundColor});
 }
 
 export function chooseJustifyContent({ theme, position }: { theme: any, position: any }) {
