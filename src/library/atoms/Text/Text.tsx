@@ -11,7 +11,7 @@ import { ITheme } from '../../theme/interface';
 import { defaults } from './predefined/defaults';
 
 
-interface ITextProps extends Partial<ITextConfig> {
+export interface ITextProps extends Partial<ITextConfig> {
     config?: Partial<ITextConfig>;
     focus?: Partial<ITextConfig>
     hover?: Partial<ITextConfig>
@@ -54,8 +54,7 @@ function styleTime(props: any) {
     return `
         display: flex;
         box-sizing: border-box;
-        padding: 8px;
-        font-family: "Source Sans Pro";
+        font-family: Source Sans Pro;
         font-weight: 600;
         line-height: ${themeHelper.chooseLineHeight(props)};
         color: ${themeHelper.chooseColor(props)};

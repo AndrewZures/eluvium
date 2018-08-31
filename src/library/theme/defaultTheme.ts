@@ -46,7 +46,7 @@ export const defaultTheme: ITheme = {
             full: '500px',
             input: '36px',
             small: '400px',
-            tiny: '56px',
+            tiny: '80px',
         },
         inputSizing: {
             height: {
@@ -62,7 +62,7 @@ export const defaultTheme: ITheme = {
         },
         width: {
             full: '100%',
-            half_screen: '200px',
+            half_screen: '50%',
             input: '400px',
             main_content: '600px',
             small: '56px',
