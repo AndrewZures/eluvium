@@ -3,7 +3,7 @@ import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { ThemeProvider } from "styled-components";
 import { defaultTheme } from '../../theme/defaultTheme';
-import { ThemeColor } from "../../theme/interface";
+import { ThemeColor } from "../../theme/interface/colors";
 import { TextInput } from "./TextInput";
 import { TextInputType } from './types';
 

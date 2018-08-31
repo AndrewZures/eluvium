@@ -5,7 +5,7 @@ import { map } from "lodash";
 import { storiesOf } from "@storybook/react";
 import { ThemeProvider } from "styled-components";
 import { defaultTheme } from '../../theme/defaultTheme';
-import { ThemeColor } from '../../theme/interface';
+import { ThemeColor } from '../../theme/interface/colors';
 import { WidthOption } from "../../theme/interface/width";
 import { Container } from "./Container";
 import { ContainerType, IContainerConfig } from './types';

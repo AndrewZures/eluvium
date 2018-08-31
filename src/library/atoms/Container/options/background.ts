@@ -1,5 +1,5 @@
 import { merge } from 'lodash';
-import { ThemeColor } from '../../../theme/interface';
+import { ThemeColor } from '../../../theme/interface/colors';
 import { IContainerConfig } from "../types";
 import { defaults } from './defaults';
 

@@ -1,5 +1,6 @@
-import { AlignItemsOption, HeightOption, JustifyContentOption, ThemeColor } from '../../theme/interface';
+import { AlignItemsOption, HeightOption, JustifyContentOption } from '../../theme/interface';
 import { BorderRadiusOption } from '../../theme/interface/borderRadius';
+import { ThemeColor } from '../../theme/interface/colors';
 import { WidthOption } from '../../theme/interface/width';
 
 export interface IContainerConfig {

@@ -1,6 +1,7 @@
 import { merge } from 'lodash';
-import { HeightOption, ThemeColor } from '../../../theme/interface';
+import { HeightOption } from '../../../theme/interface';
 import { BorderRadiusOption } from '../../../theme/interface/borderRadius';
+import { ThemeColor } from '../../../theme/interface/colors';
 import { WidthOption } from '../../../theme/interface/width';
 import { IContainerConfig } from "../types";
 import { defaults } from './defaults';

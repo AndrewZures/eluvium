@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ThemeColor } from '../library/theme/interface';
+import { ThemeColor } from '../library/theme/interface/colors';
 
 interface IContainerInterface {
     backgroundColor?: ThemeColor;
