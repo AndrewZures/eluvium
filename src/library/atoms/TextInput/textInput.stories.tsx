@@ -11,7 +11,6 @@ storiesOf("Library/Atoms/TextInput", module)
   .add("default", () => (
     <ThemeProvider theme={defaultTheme}>
       <TextInput
-        value="howdy"
         placeholder="Placeholder"
         styleType={TextInputType.Standard}
         hover={{ color: ThemeColor.Primary }}

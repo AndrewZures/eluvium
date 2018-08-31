@@ -4,7 +4,7 @@ export const defaultTheme: ITheme = {
     colors: {
         background: "#F5F7FA",
         brand: "#273A8A",
-        empty: "#FFFFF",
+        empty: "#FFFFFF",
         error: "#F0603C",
         guide: "#ABB1BE",
         none: null,
