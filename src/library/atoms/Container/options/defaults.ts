@@ -1,4 +1,6 @@
-import { AlignItemsOption, BorderRadiusOption, HeightOption, JustifyContentOption, ThemeColor, WidthOption } from '../../../theme/interface';
+import { AlignItemsOption, HeightOption, JustifyContentOption, ThemeColor } from '../../../theme/interface';
+import { BorderRadiusOption } from '../../../theme/interface/borderRadius';
+import { WidthOption } from '../../../theme/interface/width';
 import { IContainerConfig } from "../types";
 
 export const defaults: IContainerConfig = {

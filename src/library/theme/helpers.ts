@@ -1,4 +1,6 @@
-import { BorderRadiusOption, HeightOption, ThemeColor, WidthOption } from './interface';
+import { HeightOption, ThemeColor } from './interface';
+import { BorderRadiusOption } from './interface/borderRadius';
+import { WidthOption } from './interface/width';
 
 export function chooseWidth({ theme, width }: { theme: any, width: WidthOption }) {
     return theme.sizing.width[width];

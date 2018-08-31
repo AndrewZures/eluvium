@@ -1,3 +1,6 @@
+import { IBorderRadius } from './interface/borderRadius';
+import { IWidth } from './interface/width';
+
 export interface ITheme {
     colors: IColors;
     sizing: ISizing;
@@ -16,14 +19,6 @@ export enum ThemeColor {
     Success = "success",
     Warning = "warning",
     WarningHover = "warning_hover",
-}
-
-export enum WidthOption {
-    Small = 'small',
-    Full = 'full',
-    HalfScreen = 'half_screen',
-    MainContent = 'main_content',
-    Input = 'input',
 }
 
 export enum HeightOption {
@@ -76,19 +71,8 @@ export interface ISizing {
             tiny: string;
         }
     },
-    width: {
-        full: string;
-        half_screen: string;
-        main_content: string;
-        small: string;
-        input: string;
-    }
-    borderRadius: {
-        none: null;
-        rounded: string;
-        semirounded: string;
-        slightly_rounded: string;
-    }
+    width: IWidth;
+    borderRadius: IBorderRadius;
 }
 export interface IPosition {
     flex: IFlex;
@@ -137,11 +121,4 @@ export enum AlignItemsOption {
     Start = 'flex-start',
     End = 'flex-end',
     Stretch = 'stretch',
-}
-
-export enum BorderRadiusOption {
-    None = 'none',
-    Rounded = 'rounded',
-    SemiRounded = 'semirounded',
-    SlightlyRounded = 'slightly_rounded',
 }

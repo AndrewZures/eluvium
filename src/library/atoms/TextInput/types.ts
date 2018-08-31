@@ -1,4 +1,6 @@
-import { BorderRadiusOption, HeightOption, ThemeColor, WidthOption } from '../../theme/interface';
+import { HeightOption, ThemeColor } from '../../theme/interface';
+import { BorderRadiusOption } from '../../theme/interface/borderRadius';
+import { WidthOption } from '../../theme/interface/width';
 
 export interface ITextInputConfig {
     color: ThemeColor;
