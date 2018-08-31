@@ -1,7 +1,8 @@
 import { HeightOption } from './interface';
 import { BorderRadiusOption } from './interface/borderRadius';
-import { WidthOption } from './interface/width';
 import { ThemeColor } from './interface/colors';
+import { FontSizeOption, LineHeightOption } from './interface/text';
+import { WidthOption } from './interface/width';
 
 export function chooseWidth({ theme, width }: { theme: any, width: WidthOption }) {
     return theme.sizing.width[width];
@@ -29,4 +30,12 @@ export function chooseAlignItems({ theme, position }: { theme: any, position: an
 
 export function chooseBorderRadius({ theme, borderRadius }: { theme: any, borderRadius:  BorderRadiusOption }) {
     return theme.sizing.borderRadius[borderRadius];
+}
+
+export function chooseFontSize({ theme, fontSize }: { theme: any, fontSize: FontSizeOption }) {
+    return theme.text.fontSize[fontSize];
+}
+
+export function chooseLineHeight({ theme, lineHeight }: { theme: any, lineHeight: LineHeightOption }) {
+    return theme.text.lineHeight[lineHeight];
 }

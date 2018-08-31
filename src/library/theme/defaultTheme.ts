@@ -4,6 +4,7 @@ export const defaultTheme: ITheme = {
     colors: {
         background: "#F5F7FA",
         brand: "#273A8A",
+        empty: "#FFFFF",
         error: "#F0603C",
         guide: "#ABB1BE",
         none: null,
@@ -67,4 +68,12 @@ export const defaultTheme: ITheme = {
             small: '56px',
         },
     },
+    text: {
+        fontSize: {
+            medium: '16px',
+        },
+        lineHeight: {
+            medium: '24px',
+        },
+    }
 }

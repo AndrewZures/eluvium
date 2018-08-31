@@ -1,6 +1,7 @@
 export interface IColors {
     background: string;
     brand: string;
+    empty: string;
     error: string;
     guide: string;
     primary: string;
@@ -16,6 +17,7 @@ export enum ThemeColor {
     Background = "background",
     Brand = "brand",
     None = "none",
+    Empty = "empty",
     Error = "error",
     Guide = "guide",
     Primary = "primary",

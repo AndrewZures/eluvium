@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { ITextInputConfig, TextInputType } from './types';
 
 // helpers
-import { chooseBackgroundColor, chooseBorderRadius, chooseColor, chooseHeight, chooseWidth } from '../../theme/helpers';
+import * as themeHelper from '../../theme/helpers';
 
 // options
 // import { backgroundConfig } from './options/background';
@@ -14,13 +14,13 @@ import { defaults } from './predefined/defaults';
 // import { mainContentConfig } from './options/mainContent';
 
 
-interface ITextInputProps {
-    styleType?: TextInputType;
+interface ITextInputProps extends Partial<ITextInputConfig> {
     config?: Partial<ITextInputConfig>;
-    value?: string;
-    placeholder?: string;
-    hover?: Partial<ITextInputConfig>
     focus?: Partial<ITextInputConfig>
+    hover?: Partial<ITextInputConfig>
+    placeholder?: string;
+    styleType?: TextInputType;
+    value?: string;
 }
 
 export class TextInput extends React.PureComponent<ITextInputProps> {
@@ -33,7 +33,7 @@ export class TextInput extends React.PureComponent<ITextInputProps> {
 
     public render() {
         return (
-            <StyledTextInput3
+            <StyledTextInput
             value={this.props.value}
             placeholder={this.props.placeholder}
             {...this.styles()}
@@ -56,14 +56,14 @@ function styleTime(props: any) {
         display: flex;
         box-sizing: border-box;
         padding: 8px;
-        line-height: 24px;
-        color: ${chooseColor(props)};
+        line-height: ${themeHelper.chooseLineHeight(props)};
+        color: ${themeHelper.chooseColor(props)};
         border: 1px solid #D1D7E0;
-        font-size: 16px;
-        background-color: ${chooseBackgroundColor(props)};
-        height: ${chooseHeight(props)};
-        width: ${chooseWidth(props)};
-        border-radius: ${chooseBorderRadius};
+        font-size: ${themeHelper.chooseFontSize(props)}
+        background-color: ${themeHelper.chooseBackgroundColor(props)};
+        height: ${themeHelper.chooseHeight(props)};
+        width: ${themeHelper.chooseWidth(props)};
+        border-radius: ${themeHelper.chooseBorderRadius(props)};
     `;
 }
 
@@ -74,31 +74,7 @@ function focusTime({ theme, focus }: { theme: ITheme, focus: ITextInputConfig })
     return focus && styleTime({ theme, ...focus })
 }
 
-// const StyledTextInput = styled.input.attrs<ITextInputConfig>({ type: 'text' })`
-//     display: flex;
-//     box-sizing: border-box;
-//     padding: 8px;
-//     line-height: 24px;
-//     color: ${chooseColor};
-//     border: 1px solid #D1D7E0;
-//     font-size: 16px;
-//     background-color: ${chooseBackgroundColor};
-//     height: ${chooseHeight};
-//     width: ${chooseWidth};
-//     border-radius: ${chooseBorderRadius};
-
-//     &:hover {
-//         color: orange;
-//     }
-// `
-
-// const StyledTextInput2 = styled.input.attrs<ITextInputConfig>({ type: 'text' })`
-//    ${ styleTime } 
-//     &:hover { ${ props => props.hover && styleTime(props.hover) } }
-//     &:focus { ${ props => props.focus && styleTime(props.focus) }}
-// `
-
-const StyledTextInput3 = styled.input.attrs<ITextInputConfig>({ type: 'text' })`
+const StyledTextInput = styled.input.attrs<ITextInputConfig>({ type: 'text' })`
    ${ styleTime }
    &:hover { ${ hoverTime } }
    &:focus { ${ focusTime } }

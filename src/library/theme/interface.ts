@@ -1,11 +1,13 @@
 import { IBorderRadius } from './interface/borderRadius';
 import { IColors } from './interface/colors';
+import { IText } from './interface/text';
 import { IWidth } from './interface/width';
 
 export interface ITheme {
     colors: IColors;
     sizing: ISizing;
     position: IPosition;
+    text: IText;
 }
 
 export enum HeightOption {
