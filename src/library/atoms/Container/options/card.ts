@@ -6,7 +6,7 @@ import { defaults } from './defaults';
 const cardOption: Partial<IContainerConfig> = {
     backgroundColor: ThemeColor.None,
     borderRadius: BorderRadiusOption.SlightlyRounded,
-    height: HeightOption.Small,
+    height: HeightOption.Tiny,
     width: WidthOption.Small,
 }
 

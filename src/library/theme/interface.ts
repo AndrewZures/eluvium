@@ -30,6 +30,7 @@ export enum HeightOption {
     Full = 'full',
     Small = 'small',
     Input = 'input',
+    Tiny = 'tiny',
 }
 
 export enum InputHeightOption {
@@ -62,6 +63,7 @@ export interface ISizing {
         full: string;
         small: string;
         input: string;
+        tiny: string;
     },
     inputSizing: {
         height: {

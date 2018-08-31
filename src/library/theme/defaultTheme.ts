@@ -45,6 +45,7 @@ export const defaultTheme: ITheme = {
             full: '500px',
             input: '36px',
             small: '400px',
+            tiny: '56px',
         },
         inputSizing: {
             height: {

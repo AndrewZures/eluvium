@@ -60,8 +60,8 @@ function styleTime(props: any) {
         color: ${chooseColor(props)};
         border: 1px solid #D1D7E0;
         font-size: 16px;
-        background-color: ${chooseBackgroundColor};
-        height: ${chooseHeight};
+        background-color: ${chooseBackgroundColor(props)};
+        height: ${chooseHeight(props)};
         width: ${chooseWidth(props)};
         border-radius: ${chooseBorderRadius};
     `;
