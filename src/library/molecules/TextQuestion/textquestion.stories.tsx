@@ -13,7 +13,9 @@ storiesOf("Library/Molecules/TextQuestion", module)
     <ThemeProvider theme={defaultTheme}>
       <TextQuestion>
           <Text>Text input label</Text>
-          <TextInput placeholder="Placeholder" />
+          <TextInput placeholder="Placeholder">
+            <span><img src="./we-have-moved-truck.svg" alt="we've moved" height="20px" width="40px"/></span>
+          </TextInput>
       </TextQuestion>
     </ThemeProvider>
   ))
