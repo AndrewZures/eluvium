@@ -3,7 +3,6 @@ import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { ThemeProvider } from "styled-components";
 import { defaultTheme } from '../../theme/defaultTheme';
-import { ThemeColor } from "../../theme/interface/colors";
 import { TextInput } from "./TextInput";
 import { TextInputType } from './types';
 
@@ -12,9 +11,15 @@ storiesOf("Library/Atoms/TextInput", module)
     <ThemeProvider theme={defaultTheme}>
       <TextInput
         placeholder="Placeholder"
-        styleType={TextInputType.Standard}
-        hover={{ color: ThemeColor.Primary }}
-        focus={{ color: ThemeColor.Success }}
-        />
+        type={TextInputType.Standard}
+      />
+    </ThemeProvider>
+  ))
+  .add("minimal", () => (
+    <ThemeProvider theme={defaultTheme}>
+      <TextInput
+        placeholder="Placeholder"
+        type={TextInputType.Minimal}
+      />
     </ThemeProvider>
   ))

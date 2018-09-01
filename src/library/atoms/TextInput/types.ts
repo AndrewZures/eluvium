@@ -17,5 +17,6 @@ export interface ITextInputConfig {
 }
 
 export enum TextInputType {
+    Minimal = 'minimal',
     Standard = 'standard',
 }
