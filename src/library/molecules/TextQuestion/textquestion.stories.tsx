@@ -12,9 +12,7 @@ storiesOf("Library/Molecules/TextQuestion", module)
   .add("default", () => (
     <ThemeProvider theme={defaultTheme}>
       <TextQuestion>
-          <Text>
-            Text input label
-          </Text>
+          <Text>Text input label</Text>
           <TextInput placeholder="Placeholder" />
       </TextQuestion>
     </ThemeProvider>
