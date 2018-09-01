@@ -9,6 +9,6 @@ export const defaults: ITextConfig = {
     color: ThemeColor.Primary,
     fontSize: FontSizeOption.Medium,
     height: HeightOption.Input,
-    lineHeight: LineHeightOption.Medium,
+    lineHeight: LineHeightOption.Small,
     width: WidthOption.Input,
 }

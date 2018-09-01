@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { ContainerType, IContainerConfig } from './types';
 
 // helpers
-import { chooseAlignItems, chooseBackgroundColor, chooseBorderRadius, chooseHeight, chooseJustifyContent, chooseWidth } from '../../theme/helpers';
+import { chooseAlignItems2, chooseBackgroundColor, chooseBorderRadius, chooseHeight, chooseJustifyContent, chooseWidth } from '../../theme/helpers';
 
 // options
 import { backgroundConfig } from './options/background';
@@ -47,6 +47,6 @@ const StyledContainer = styled.div.attrs<IContainerConfig>({})`
     height: ${chooseHeight};
     width: ${chooseWidth};
     justify-content: ${chooseJustifyContent};
-    align-items: ${chooseAlignItems}
+    ${chooseAlignItems2}
     border-radius: ${chooseBorderRadius}
 `

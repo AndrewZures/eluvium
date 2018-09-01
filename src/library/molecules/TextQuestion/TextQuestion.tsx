@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import * as themeHelper from '../../theme/helpers';
 
 // options
-import { ITheme } from '../../theme/interface';
 import { ITextQuestionConfig } from './types';
 
 import { ITextConfig } from '../../atoms/Text/types';
@@ -50,15 +49,15 @@ function styleTime(props: any) {
     `;
 }
 
-function hoverTime({ theme, hover }: { theme: ITheme, hover: ITextQuestionConfig }) {
-    return hover && styleTime({ theme, ...hover });
+function hoverTime(props: any) {
+    return props.hover ? `&:hover { ${styleTime({ theme: props.theme, ...props.hover })} };` : '';
 }
-function focusTime({ theme, focus }: { theme: ITheme, focus: ITextQuestionConfig }) {
-    return focus && styleTime({ theme, ...focus })
+function focusTime(props: any) {
+    return props.focus ? `&:focus { ${styleTime({ theme: props.theme, ...props.focus })} };` : '';
 }
 
 const StyledTextQuestion = styled.div.attrs<ITextQuestionConfig>({ type: 'text' })`
    ${ styleTime }
-   &:hover { ${ hoverTime } }
-   &:focus { ${ focusTime } }
+   ${ hoverTime }
+   ${ focusTime }
 `

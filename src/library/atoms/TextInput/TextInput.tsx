@@ -55,13 +55,12 @@ function styleTime(props: any) {
     return `
         display: flex;
         box-sizing: border-box;
-        padding: 8px;
+        padding: 0;
+        border: none;
         line-height: ${themeHelper.chooseLineHeight(props)};
         color: ${themeHelper.chooseColor(props)};
-        border: 1px solid #D1D7E0;
         font-size: ${themeHelper.chooseFontSize(props)}
         background-color: ${themeHelper.chooseBackgroundColor(props)};
-        height: ${themeHelper.chooseHeight(props)};
         width: ${themeHelper.chooseWidth(props)};
         border-radius: ${themeHelper.chooseBorderRadius(props)};
     `;

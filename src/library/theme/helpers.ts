@@ -1,4 +1,5 @@
 import { HeightOption } from './interface';
+
 import { BorderRadiusOption } from './interface/borderRadius';
 import { ThemeColor } from './interface/colors';
 import { FontSizeOption, LineHeightOption } from './interface/text';
@@ -26,6 +27,10 @@ export function chooseJustifyContent({ theme, position }: { theme: any, position
 
 export function chooseAlignItems({ theme, position }: { theme: any, position: any }) {
     return theme.position.flex.align_items[position.flex.align_items];
+}
+
+export function chooseAlignItems2({ theme, position }: { theme: any, position: any }) {
+    return position ? `align-items: ${theme.position.flex.align_items[position.flex.align_items]}` : null;
 }
 
 export function chooseBorderRadius({ theme, borderRadius }: { theme: any, borderRadius:  BorderRadiusOption }) {

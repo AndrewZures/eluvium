@@ -74,6 +74,7 @@ export const defaultTheme: ITheme = {
         },
         lineHeight: {
             medium: '24px',
+            small: '20px',
         },
     }
 }

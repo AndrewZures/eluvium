@@ -6,10 +6,12 @@ export interface IText {
 // Line Height
 
 export interface ILineHeight {
+    small: string;
     medium: string;
 }
 
 export enum LineHeightOption {
+    Small = 'small',
     Medium = 'medium'
 }
 

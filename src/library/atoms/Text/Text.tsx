@@ -52,28 +52,27 @@ export class Text extends React.PureComponent<ITextProps> {
 
 function styleTime(props: any) {
     return `
-        display: flex;
         box-sizing: border-box;
         font-family: Source Sans Pro;
         font-weight: 600;
+        padding: 0 0 8px 0;
         line-height: ${themeHelper.chooseLineHeight(props)};
         color: ${themeHelper.chooseColor(props)};
         font-size: ${themeHelper.chooseFontSize(props)}
         background-color: ${themeHelper.chooseBackgroundColor(props)};
-        height: ${themeHelper.chooseHeight(props)};
         width: ${themeHelper.chooseWidth(props)};
     `;
 }
 
 function hoverTime({ theme, hover }: { theme: ITheme, hover: ITextConfig }) {
-    return hover && styleTime({ theme, ...hover });
+    return hover && `&:hover { ${styleTime({ theme, ...hover }) } }`;
 }
 function focusTime({ theme, focus }: { theme: ITheme, focus: ITextConfig }) {
-    return focus && styleTime({ theme, ...focus })
+    return focus && `&:focus { ${styleTime({ theme, ...focus }) } }`;
 }
 
 const StyledText = styled.div.attrs<ITextConfig>({ type: 'text' })`
    ${ styleTime }
-   &:hover { ${ hoverTime } }
-   &:focus { ${ focusTime } }
+   ${ hoverTime }
+   ${ focusTime }
 `
