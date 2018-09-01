@@ -7,8 +7,8 @@ import { ITextInputConfig } from '../types';
 
 export const defaults: ITextInputConfig = {
     backgroundColor: ThemeColor.Empty,
-    borderRadius: BorderRadiusOption.None,
-    color: ThemeColor.Error,
+    borderRadius: BorderRadiusOption.SlightlyRounded,
+    color: ThemeColor.Primary,
     fontSize: FontSizeOption.Medium,
     height: HeightOption.Input,
     lineHeight: LineHeightOption.Medium,

@@ -40,7 +40,7 @@ export const defaultTheme: ITheme = {
             none: null,
             rounded: '90px',
             semirounded: '15px',
-            slightly_rounded: '4px',
+            slightly_rounded: '2px',
         },
         height: {
             full: '500px',

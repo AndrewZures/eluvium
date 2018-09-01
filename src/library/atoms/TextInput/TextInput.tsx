@@ -51,14 +51,19 @@ function styleTime(props: any) {
     return `
         display: flex;
         box-sizing: border-box;
-        padding: 0;
-        border: none;
+        padding: 0 8px;
+        border: 1px solid #D1D7E0;
         line-height: ${themeHelper.chooseLineHeight(props)};
         color: ${themeHelper.chooseColor(props)};
         font-size: ${themeHelper.chooseFontSize(props)}
         background-color: ${themeHelper.chooseBackgroundColor(props)};
         width: ${themeHelper.chooseWidth(props)};
         border-radius: ${themeHelper.chooseBorderRadius(props)};
+        height: ${themeHelper.chooseHeight(props)};
+
+        &::-webkit-input-placeholder {
+            color: #ABB1BE;
+        }
     `;
 }
 

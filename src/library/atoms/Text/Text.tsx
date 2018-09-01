@@ -15,7 +15,6 @@ export interface ITextProps extends Partial<ITextConfig> {
     config?: Partial<ITextConfig>;
     focus?: Partial<ITextConfig>
     hover?: Partial<ITextConfig>
-    placeholder?: string;
     styleType?: TextType;
     value?: string;
 }
@@ -30,11 +29,7 @@ export class Text extends React.PureComponent<ITextProps> {
 
     public render() {
         return (
-            <StyledText
-                value={this.props.value}
-                placeholder={this.props.placeholder}
-                {...this.styles()}
-            >
+            <StyledText {...this.styles()}>
                 {this.props.children}
             </StyledText>
         );
@@ -53,7 +48,7 @@ export class Text extends React.PureComponent<ITextProps> {
 function styleTime(props: any) {
     return `
         box-sizing: border-box;
-        font-family: Source Sans Pro;
+        font-family: sans-serif;
         font-weight: 600;
         padding: 0 0 8px 0;
         line-height: ${themeHelper.chooseLineHeight(props)};
