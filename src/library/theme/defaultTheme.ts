@@ -42,6 +42,10 @@ export const defaultTheme: ITheme = {
             semirounded: '15px',
             slightly_rounded: '2px',
         },
+        boxShadow: {
+            medium: '0 5px 7px rgba(0, 0, 0, 0.1), 0 3px 12px rgba(0, 0, 0, 0.14)',
+            none: null,
+        },
         height: {
             full: '500px',
             input: '36px',

@@ -1,4 +1,3 @@
-import { merge } from 'lodash';
 import * as React from 'react';
 import styled from 'styled-components';
 import { ITextDropdownConfig, TextDropdownType } from './types';
@@ -11,6 +10,9 @@ import { Text } from '../../atoms/Text/Text';
 // helpers
 import * as themeHelper from '../../theme/helpers';
 
+import { Container } from '../../atoms/Container/Container';
+import { ContainerType } from '../../atoms/Container/types';
+
 // options
 
 interface ITextDropdownProps extends Partial<ITextDropdownConfig> {
@@ -22,7 +24,15 @@ interface ITextDropdownProps extends Partial<ITextDropdownConfig> {
     value?: string;
 }
 
-export class TextDropdown extends React.PureComponent<ITextDropdownProps> {
+interface ITextDropdownState {
+    isOpen: boolean;
+}
+
+export class TextDropdown extends React.PureComponent<ITextDropdownProps, ITextDropdownState> {
+
+    public readonly state: Readonly<ITextDropdownState> = {
+        isOpen: false,
+      };
 
     private options: { [key: string]: ITextDropdownConfig } = { }
 
@@ -42,8 +52,15 @@ export class TextDropdown extends React.PureComponent<ITextDropdownProps> {
                         height="20px"
                         width="40px"
                         style={{ display: "block", position: "absolute", top: this.calcIconHeight(36, 20), right: "16px" }}
-                        onClick={this.showDropdown}
+                        onClick={this.toggleDropdown}
                     />
+                    { this.state.isOpen &&
+                        <Container type={ContainerType.Dropdown}>
+                            <div>Div 1</div>
+                            <div>Div 2</div>
+                            <div>Div 3</div>
+                        </Container>
+                    }
                 </div>
             </div>
         );
@@ -53,17 +70,17 @@ export class TextDropdown extends React.PureComponent<ITextDropdownProps> {
         return `${(parentHeight / 2) - (iconHeight / 2)}px`;
     }
 
-    private showDropdown = () => {
-        alert('clicked');
+    private toggleDropdown = () => {
+        this.setState({ isOpen: !this.state.isOpen });
     }
-
 
     private styles(): ITextDropdownConfig {
         const { type, config, hover, focus } = this.props;
         const container = this.options[type!] || defaults;
-        const hi = this.props.config ? merge({}, container, config) : container;
-        hi.hover = merge({}, hi, hover );
-        hi.focus = merge({}, hi, focus );
+        let hi = container;
+        if(config) { hi = {...container, ...config} }
+        if(hover) { hi.hover = hover }
+        if(focus) { hi.focus = focus }
         return hi;
     }
 }
@@ -80,7 +97,6 @@ function styleTime(props: any) {
         font-size: ${themeHelper.chooseFontSize(props)}
         background-color: ${themeHelper.chooseBackgroundColor(props)};
         width: ${themeHelper.chooseWidth(props)};
-        border-radius: ${themeHelper.chooseBorderRadius(props)};
         height: ${themeHelper.chooseHeight(props)};
 
         &::-webkit-input-placeholder {

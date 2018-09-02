@@ -58,7 +58,7 @@ function styleTime(props: any) {
         font-size: ${themeHelper.chooseFontSize(props)}
         background-color: ${themeHelper.chooseBackgroundColor(props)};
         width: ${themeHelper.chooseWidth(props)};
-        border-radius: ${themeHelper.chooseBorderRadius(props)};
+        border-radius: ${themeHelper.oldChooseBorderRadius(props)};
         height: ${themeHelper.chooseHeight(props)};
 
         &::-webkit-input-placeholder {

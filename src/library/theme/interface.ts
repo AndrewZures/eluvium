@@ -48,6 +48,7 @@ export interface ISizing {
     },
     width: IWidth;
     borderRadius: IBorderRadius;
+    boxShadow: IBoxShadow;
 }
 export interface IPosition {
     flex: IFlex;
@@ -96,4 +97,14 @@ export enum AlignItemsOption {
     Start = 'flex-start',
     End = 'flex-end',
     Stretch = 'stretch',
+}
+
+export interface IBoxShadow {
+    medium: string;
+    none: null;
+}
+
+export enum BoxShadowOption {
+    Medium = 'medium',
+    None = 'none',
 }

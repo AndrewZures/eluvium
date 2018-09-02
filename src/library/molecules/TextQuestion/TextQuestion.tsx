@@ -45,7 +45,7 @@ function styleTime(props: any) {
         background-color: ${themeHelper.chooseBackgroundColor(props)};
         height: ${themeHelper.chooseHeight(props)};
         width: ${themeHelper.chooseWidth(props)};
-        border-radius: ${themeHelper.chooseBorderRadius(props)};
+        border-radius: ${themeHelper.oldChooseBorderRadius(props)};
     `;
 }
 

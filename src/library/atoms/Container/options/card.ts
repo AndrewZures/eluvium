@@ -1,4 +1,3 @@
-import { merge } from 'lodash';
 import { HeightOption } from '../../../theme/interface';
 import { BorderRadiusOption } from '../../../theme/interface/borderRadius';
 import { ThemeColor } from '../../../theme/interface/colors';
@@ -13,4 +12,4 @@ const cardOption: Partial<IContainerConfig> = {
     width: WidthOption.Small,
 }
 
-export const cardConfig: IContainerConfig = merge({}, defaults, cardOption);
+export const cardConfig: IContainerConfig = {...defaults, ...cardOption};

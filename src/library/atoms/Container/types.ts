@@ -1,4 +1,4 @@
-import { AlignItemsOption, HeightOption, JustifyContentOption } from '../../theme/interface';
+import { AlignItemsOption, BoxShadowOption, HeightOption, JustifyContentOption } from '../../theme/interface';
 import { BorderRadiusOption } from '../../theme/interface/borderRadius';
 import { ThemeColor } from '../../theme/interface/colors';
 import { WidthOption } from '../../theme/interface/width';
@@ -8,12 +8,9 @@ export interface IContainerConfig {
     width: WidthOption;
     height: HeightOption;
     borderRadius: BorderRadiusOption,
-    position: {
-        flex: {
-            align_items: AlignItemsOption,
-            justify_content: JustifyContentOption,
-        }
-    }
+    boxShadow: BoxShadowOption,
+    alignItems: AlignItemsOption,
+    justifyContent: JustifyContentOption,
 }
 
 export enum ContainerType {
@@ -21,4 +18,5 @@ export enum ContainerType {
     Content = 'content',
     Card = 'card',
     MainContent = 'main_content',
+    Dropdown = 'dropdown',
 }

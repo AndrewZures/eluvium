@@ -39,7 +39,8 @@ storiesOf("Library/Atoms/Component", module)
         </Container>
       </ThemeProvider>
   ))
-  .add("palette", () => (
+  .add("palette", () => {
+    return (
       <ThemeProvider theme={defaultTheme}>
         <Container type={ContainerType.Background}>
             {map(defaultTheme.colors, (k: string, v: ThemeColor) => (
@@ -47,4 +48,17 @@ storiesOf("Library/Atoms/Component", module)
             ))}
         </Container>
       </ThemeProvider>
-  ));
+    )
+  })
+  .add("dropdown", () => (
+      <ThemeProvider theme={defaultTheme}>
+        <Container type={ContainerType.Background}>
+          <Container type={ContainerType.Dropdown}>
+              {map(defaultTheme.colors, (k: string, v: ThemeColor) => <div>{v}</div>)}
+          </Container>
+        </Container>
+      </ThemeProvider>
+  ))
+  .add("empty", () => (
+      <div>Hi</div>
+));
