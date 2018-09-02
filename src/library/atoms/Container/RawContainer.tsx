@@ -14,7 +14,7 @@ export class RawContainer extends React.PureComponent<IRawContainerProps> {
     public render() {
         const { presets, custom } = this.props;
         return (
-            <StyledContainer presets={presets} custom={custom} >
+            <StyledContainer presets={presets} custom={custom}>
                 {this.props.children}
             </StyledContainer>
         );
