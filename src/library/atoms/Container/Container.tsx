@@ -27,7 +27,7 @@ export class Container extends React.PureComponent<IContainerProps> {
     public render() {
         return (
             <RawContainer
-                presets={this.predefinedTypes[this.props.type!] || {}}
+                defaults={this.predefinedTypes[this.props.type!] || {}}
                 custom={this.props.custom || {}}
             >
                 {this.props.children}

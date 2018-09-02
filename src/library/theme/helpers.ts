@@ -14,15 +14,15 @@ type Field =
     'alignItems' |
     'justifyContent'
 
-export function choose(fieldId: Field, { theme, presets, custom }: { theme: any, presets: any, custom: any }): string {
+export function choose(fieldId: Field, { theme, defaults, custom }: { theme: any, defaults: any, custom: any }): string {
     switch(fieldId) {
-        case 'alignItems': return chooseAlignItems(theme, presets.alignItems, custom.alignItems);
-        case 'backgroundColor': return chooseBackgroundColor2(theme, presets.backgroundColor, custom.backgroundColor);
-        case 'borderRadius': return chooseBorderRadius(theme, presets.borderRadius, custom.borderRadius);
-        case 'color': return chooseColor(theme, presets.color, custom.color);
-        case 'justifyContent': return chooseJustifyContent(theme, presets.justifyContent, custom.justifyContent);
-        case 'height': return chooseHeight(theme, presets.height, custom.height);
-        case 'width': return chooseWidth(theme, presets.width, custom.width);
+        case 'alignItems': return chooseAlignItems(theme, defaults.alignItems, custom.alignItems);
+        case 'backgroundColor': return chooseBackgroundColor2(theme, defaults.backgroundColor, custom.backgroundColor);
+        case 'borderRadius': return chooseBorderRadius(theme, defaults.borderRadius, custom.borderRadius);
+        case 'color': return chooseColor(theme, defaults.color, custom.color);
+        case 'justifyContent': return chooseJustifyContent(theme, defaults.justifyContent, custom.justifyContent);
+        case 'height': return chooseHeight(theme, defaults.height, custom.height);
+        case 'width': return chooseWidth(theme, defaults.width, custom.width);
         default: return '';
     }
 }

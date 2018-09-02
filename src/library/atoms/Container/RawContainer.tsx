@@ -5,16 +5,15 @@ import { IContainerConfig } from './types';
 import { choose } from '../../theme/helpers';
 
 interface IRawContainerProps {
-    presets: Partial<IContainerConfig>;
+    defaults: Partial<IContainerConfig>;
     custom: Partial<IContainerConfig>;
 }
 
 export class RawContainer extends React.PureComponent<IRawContainerProps> {
 
     public render() {
-        const { presets, custom } = this.props;
         return (
-            <StyledContainer presets={presets} custom={custom}>
+            <StyledContainer defaults={this.props.defaults} custom={this.props.custom}>
                 {this.props.children}
             </StyledContainer>
         );
