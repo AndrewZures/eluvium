@@ -24,7 +24,7 @@ storiesOf("Library/Atoms/Component", module)
 
     return (
       <ThemeProvider theme={defaultTheme}>
-        <Container config={config} />
+        <Container custom={config} />
       </ThemeProvider>
     );
   })
@@ -44,7 +44,7 @@ storiesOf("Library/Atoms/Component", module)
       <ThemeProvider theme={defaultTheme}>
         <Container type={ContainerType.Background}>
             {map(defaultTheme.colors, (k: string, v: ThemeColor) => (
-              <Container key={k} type={ContainerType.Card} config={{ backgroundColor: v }} />
+              <Container key={k} type={ContainerType.Card} custom={{ backgroundColor: v }} />
             ))}
         </Container>
       </ThemeProvider>
