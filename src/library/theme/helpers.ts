@@ -61,7 +61,7 @@ export function chooseColor(theme: any, defaultColor?: ThemeColor, customColor?:
 }
 
 export function oldChooseColor({ theme, color }: { theme: any, color: ThemeColor | undefined }) {
-    return theme.colors[color!] || ThemeColor.Primary;
+    return theme.colors[color!] || "primary"
 }
 
 export function chooseBackgroundColor2(theme: any, defaultColor?: ThemeColor, customColor?: ThemeColor): string {

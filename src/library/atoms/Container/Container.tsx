@@ -18,10 +18,10 @@ export class Container extends React.PureComponent<IContainerProps> {
 
     // predefined container choices
     private predefinedTypes: { [key: string]: IContainerConfig } = {
-        [ContainerType.Background]: backgroundConfig,
-        [ContainerType.Card]: cardConfig,
-        [ContainerType.MainContent]: mainContentConfig,
-        [ContainerType.Dropdown]: dropdownConfig,
+        'background': backgroundConfig,
+        'card': cardConfig,
+        'dropdown': dropdownConfig,
+        'main_content': mainContentConfig,
     }
 
     public render() {

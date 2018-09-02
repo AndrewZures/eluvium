@@ -10,10 +10,9 @@ export interface ILineHeight {
     medium: string;
 }
 
-export enum LineHeightOption {
-    Small = 'small',
-    Medium = 'medium'
-}
+export type LineHeightOption =
+    'small' |
+    'medium'
 
 // Font Size
 
@@ -21,6 +20,5 @@ export interface IFontSize {
     medium: string;
 }
 
-export enum FontSizeOption {
-    Medium = 'medium'
-}
+export type FontSizeOption =
+   'medium'

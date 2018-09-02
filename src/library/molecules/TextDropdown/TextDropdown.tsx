@@ -11,7 +11,6 @@ import { Text } from '../../atoms/Text/Text';
 import * as themeHelper from '../../theme/helpers';
 
 import { Container } from '../../atoms/Container/Container';
-import { ContainerType } from '../../atoms/Container/types';
 
 // options
 
@@ -55,7 +54,7 @@ export class TextDropdown extends React.PureComponent<ITextDropdownProps, ITextD
                         onClick={this.toggleDropdown}
                     />
                     { this.state.isOpen &&
-                        <Container type={ContainerType.Dropdown}>
+                        <Container type="dropdown">
                             <div>Div 1</div>
                             <div>Div 2</div>
                             <div>Div 3</div>

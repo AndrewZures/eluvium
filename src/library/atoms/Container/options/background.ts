@@ -1,11 +1,9 @@
-import { merge } from 'lodash';
-import { ThemeColor } from '../../../theme/interface/colors';
 import { IContainerConfig } from "../types";
 import { defaults } from './defaults';
 
 const backgroundOption: Partial<IContainerConfig> = {
-    backgroundColor: ThemeColor.Background,
+    backgroundColor: "background",
 }
 
-export const backgroundConfig: IContainerConfig = merge({}, defaults, backgroundOption);
+export const backgroundConfig: IContainerConfig = {...defaults, ...backgroundOption};
 

@@ -2,7 +2,6 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { IContainerConfig } from './types';
 
-// helpers
 import { choose } from '../../theme/helpers';
 
 interface IRawContainerProps {

@@ -13,10 +13,9 @@ export interface IContainerConfig {
     justifyContent: JustifyContentOption,
 }
 
-export enum ContainerType {
-    Background = 'background',
-    Content = 'content',
-    Card = 'card',
-    MainContent = 'main_content',
-    Dropdown = 'dropdown',
-}
+export type ContainerType = 
+    'background' |
+    'content' |
+    'card' |
+    'main_content' |
+    'dropdown'

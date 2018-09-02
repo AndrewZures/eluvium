@@ -24,7 +24,7 @@ interface ITextInputProps extends Partial<ITextInputConfig> {
 export class TextInput extends React.PureComponent<ITextInputProps> {
 
     private options: { [key: string]: ITextInputConfig } = {
-        [TextInputType.Minimal]: minimalConfig,
+        'minimal': minimalConfig,
     }
 
     public render() {

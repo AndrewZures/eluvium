@@ -14,6 +14,5 @@ export interface ITextConfig {
     focus?: Partial<ITextConfig>;
 }
 
-export enum TextType {
-    Standard = 'standard',
-}
+export type TextType =
+    'standard'

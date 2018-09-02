@@ -13,17 +13,16 @@ export interface IColors {
     none: null;
 }
 
-export enum ThemeColor {
-    Background = "background",
-    Brand = "brand",
-    None = "none",
-    Empty = "empty",
-    Error = "error",
-    Guide = "guide",
-    Primary = "primary",
-    Secondary = "secondary",
-    Stroke = "stroke",
-    Success = "success",
-    Warning = "warning",
-    WarningHover = "warning_hover",
-}
+export type ThemeColor =
+    "background" |
+    "brand" |
+    "none" |
+    "empty" |
+    "error" |
+    "guide" |
+    "primary" |
+    "secondary" |
+    "stroke" |
+    "success" |
+    "warning" |
+    "warningHover"

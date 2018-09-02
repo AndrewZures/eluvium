@@ -4,14 +4,13 @@ import { storiesOf } from "@storybook/react";
 import { ThemeProvider } from "styled-components";
 import { defaultTheme } from '../../theme/defaultTheme';
 import { TextInput } from "./TextInput";
-import { TextInputType } from './types';
 
 storiesOf("Library/Atoms/TextInput", module)
   .add("default", () => (
     <ThemeProvider theme={defaultTheme}>
       <TextInput
         placeholder="Placeholder"
-        type={TextInputType.Standard}
+        type="standard"
       />
     </ThemeProvider>
   ))
@@ -19,7 +18,7 @@ storiesOf("Library/Atoms/TextInput", module)
     <ThemeProvider theme={defaultTheme}>
       <TextInput
         placeholder="Placeholder"
-        type={TextInputType.Minimal}
+        type="minimal"
       />
     </ThemeProvider>
   ))

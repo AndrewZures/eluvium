@@ -5,9 +5,8 @@ export interface IBorderRadius {
    slightly_rounded: string;
 }
 
-export enum BorderRadiusOption {
-    None = 'none',
-    Rounded = 'rounded',
-    SemiRounded = 'semirounded',
-    SlightlyRounded = 'slightly_rounded',
-}
+export type BorderRadiusOption =
+    'none' |
+    'rounded' |
+    'semirounded' |
+    'slightly_rounded'

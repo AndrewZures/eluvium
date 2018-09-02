@@ -6,20 +6,19 @@ import { storiesOf } from "@storybook/react";
 import { ThemeProvider } from "styled-components";
 import { defaultTheme } from '../../theme/defaultTheme';
 import { ThemeColor } from '../../theme/interface/colors';
-import { WidthOption } from "../../theme/interface/width";
 import { Container } from "./Container";
-import { ContainerType, IContainerConfig } from './types';
+import { IContainerConfig } from './types';
 
 storiesOf("Library/Atoms/Component", module)
   .add("default", () => (
     <ThemeProvider theme={defaultTheme}>
-      <Container type={ContainerType.Background} />
+      <Container type="background" />
     </ThemeProvider>
   ))
   .add("with overrides", () => {
     const config: Partial<IContainerConfig> = {
-      backgroundColor: ThemeColor.Error,
-      width: WidthOption.HalfScreen,
+      backgroundColor: 'error',
+      width: 'half_screen',
     };
 
     return (
@@ -30,8 +29,8 @@ storiesOf("Library/Atoms/Component", module)
   })
   .add("main content", () => (
       <ThemeProvider theme={defaultTheme}>
-        <Container type={ContainerType.Background}>
-          <Container type={ContainerType.MainContent}>
+        <Container type="background">
+          <Container type="main_content">
             <div>Div 1</div>
             <div>Div 2</div>
             <div>Div 3</div>
@@ -42,9 +41,9 @@ storiesOf("Library/Atoms/Component", module)
   .add("palette", () => {
     return (
       <ThemeProvider theme={defaultTheme}>
-        <Container type={ContainerType.Background}>
+        <Container type="background">
             {map(defaultTheme.colors, (k: string, v: ThemeColor) => (
-              <Container key={k} type={ContainerType.Card} custom={{ backgroundColor: v }} />
+              <Container key={k} type="card" custom={{ backgroundColor: v }} />
             ))}
         </Container>
       </ThemeProvider>
@@ -52,8 +51,8 @@ storiesOf("Library/Atoms/Component", module)
   })
   .add("dropdown", () => (
       <ThemeProvider theme={defaultTheme}>
-        <Container type={ContainerType.Background}>
-          <Container type={ContainerType.Dropdown}>
+        <Container type="background">
+          <Container type="dropdown">
               {map(defaultTheme.colors, (k: string, v: ThemeColor) => <div>{v}</div>)}
           </Container>
         </Container>

@@ -10,23 +10,20 @@ export interface ITheme {
     text: IText;
 }
 
-export enum HeightOption {
-    Full = 'full',
-    Small = 'small',
-    Input = 'input',
-    Tiny = 'tiny',
-}
+export type HeightOption =
+    'full' |
+    'small' |
+    'input' |
+    'tiny'
 
-export enum InputHeightOption {
-    Medium = 'medium'
-}
+export type InputHeightOption =
+    'medium'
 
-export enum InputWidthOptions {
-    Medium = 'medium',
-    SmallMedium = 'small_medium',
-    Small = 'small',
-    Tiny = 'tiny',
-}
+export type InputWidthOptions =
+    'medium' |
+    'small_medium' |
+    'small' |
+    'tiny'
 
 export interface ISizing {
     height: {
@@ -72,14 +69,13 @@ export interface IJustifyContent {
     start: string;
 }
 
-export enum JustifyContentOption {
-    Center = 'center',
-    End = 'end',
-    SpaceAround = 'space_around',
-    SpaceBetween = 'space_between',
-    SpaceEvenly = 'space_evenly',
-    Start = 'start',
-}
+export type JustifyContentOption =
+    'center' |
+    'end' |
+    'space_around' |
+    'space_between' |
+    'space_evenly' | 
+    'start'
 
 export interface IAlignItems {
     baseline: string;
@@ -89,20 +85,18 @@ export interface IAlignItems {
     stretch: string;
 }
 
-export enum AlignItemsOption {
-    Baseline = 'baseline',
-    Center = 'center',
-    Start = 'flex-start',
-    End = 'flex-end',
-    Stretch = 'stretch',
-}
+export type AlignItemsOption = 
+    'baseline' |
+    'center' | 
+    'flex-start' |
+    'flex-end' |
+    'stretch'
 
 export interface IBoxShadow {
     medium: string;
     none: null;
 }
 
-export enum BoxShadowOption {
-    Medium = 'medium',
-    None = 'none',
-}
+export type BoxShadowOption =
+    'medium' |
+    'none'

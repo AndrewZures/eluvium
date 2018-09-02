@@ -16,7 +16,6 @@ export interface ITextDropdownConfig {
     focus?: Partial<ITextDropdownConfig>;
 }
 
-export enum TextDropdownType {
-    Minimal = 'minimal',
-    Standard = 'standard',
-}
+export type TextDropdownType =
+    'minimal' |
+    'standard'

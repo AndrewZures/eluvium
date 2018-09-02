@@ -6,10 +6,9 @@ export interface IWidth {
     input: string;
 }
 
-export enum WidthOption {
-    Small = 'small',
-    Full = 'full',
-    HalfScreen = 'half_screen',
-    MainContent = 'main_content',
-    Input = 'input',
-}
+export type WidthOption =
+    'small' |
+    'full' |
+    'half_screen' |
+    'main_content' |
+    'input'

@@ -16,7 +16,6 @@ export interface ITextInputConfig {
     focus?: Partial<ITextInputConfig>;
 }
 
-export enum TextInputType {
-    Minimal = 'minimal',
-    Standard = 'standard',
-}
+export type TextInputType =
+    'minimal' |
+    'standard'
