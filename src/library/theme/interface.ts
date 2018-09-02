@@ -66,7 +66,6 @@ export interface IFlex {
 export interface IJustifyContent {
     center: string;
     end: string;
-    none: null,
     space_around: string;
     space_between: string;
     space_evenly: string;
@@ -80,7 +79,6 @@ export enum JustifyContentOption {
     SpaceBetween = 'space_between',
     SpaceEvenly = 'space_evenly',
     Start = 'start',
-    None = 'none',
 }
 
 export interface IAlignItems {

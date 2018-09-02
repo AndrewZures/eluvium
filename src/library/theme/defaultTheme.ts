@@ -27,7 +27,6 @@ export const defaultTheme: ITheme = {
             justify_content: {
                 center: 'center',
                 end: 'flex-end',
-                none: null,
                 space_around: 'space_around',
                 space_between: 'space_between',
                 space_evenly: 'space_evenly',

@@ -1,4 +1,3 @@
-import { merge } from 'lodash';
 import { HeightOption } from '../../../theme/interface';
 import { ThemeColor } from '../../../theme/interface/colors';
 import { WidthOption } from '../../../theme/interface/width';
@@ -11,4 +10,4 @@ const mainContent: Partial<IContainerConfig> = {
     width: WidthOption.MainContent,
 }
 
-export const mainContentConfig: IContainerConfig = merge({}, defaults, mainContent);
+export const mainContentConfig: IContainerConfig = {...defaults, ...mainContent};

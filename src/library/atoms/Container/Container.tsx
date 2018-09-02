@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { ContainerType, IContainerConfig } from './types';
 
 // helpers
-import * as themeHelper from '../../theme/helpers';
+import { choose } from '../../theme/helpers';
 
 // options
 import { backgroundConfig } from './options/background';
@@ -43,16 +43,12 @@ interface IStyledContainerProps {
     custom: Partial<IContainerConfig>;
 }
 
-// const myHelper<T> = ({theme, config, defaults}, key: string, fn: (a: any, b: T, c: T) => string): string => {
-//     return fn(theme, config[key], defaults[key]);
-// }
-
 const StyledContainer = styled.div.attrs<IStyledContainerProps>({})`
     display: flex;
-    ${props => themeHelper.choose('alignItems', props)}
-    ${props => themeHelper.choose('backgroundColor', props) }
-    ${props => themeHelper.choose('borderRadius', props)}
-    ${props => themeHelper.choose('height', props) }
-    ${props => themeHelper.choose('justifyContent', props)}
-    ${props => themeHelper.choose('width', props)}
+    ${props => choose('alignItems', props)}
+    ${props => choose('backgroundColor', props) }
+    ${props => choose('borderRadius', props)}
+    ${props => choose('height', props) }
+    ${props => choose('justifyContent', props)}
+    ${props => choose('width', props)}
 `
