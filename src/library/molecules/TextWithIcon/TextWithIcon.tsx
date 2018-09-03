@@ -7,7 +7,7 @@ import { ITextInputProps, TextInput } from '../../atoms/TextInput/TextInput';
 
 export interface ITextWithIconProps {
     text: ITextInputProps;
-    icon: IconProps;
+    icon?: IconProps;
     iconPosition?: 'left' | 'right';
 }
 
@@ -49,7 +49,7 @@ export class TextWithIcon extends React.PureComponent<ITextWithIconProps> {
         return (
             <StyledTextWithIcon {...this.props}>
                 <TextInput {...this.textPosition()} {...this.props.text} />
-                <Icon {...this.iconPosition()} {...this.props.icon} />
+                {this.props.icon && <Icon {...this.iconPosition()} {...this.props.icon} />}
             </StyledTextWithIcon>
         );
     }
