@@ -29,6 +29,14 @@ const style: styleFn<ITextInputConfig> = data => {
         ${choose('width', data)}
         ${choose('height', data)}
         ${choose('borderRadius', data)}
+        ${choose('margin-bottom', data)}
+        ${choose('margin-left', data)}
+        ${choose('margin-top', data)}
+        ${choose('margin-right', data)}
+        ${choose('padding-bottom', data)}
+        ${choose('padding-left', data)}
+        ${choose('padding-top', data)}
+        ${choose('padding-right', data)}
 
         &::-webkit-input-placeholder {
             color: #ABB1BE;

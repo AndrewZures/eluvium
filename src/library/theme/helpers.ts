@@ -2,6 +2,7 @@ import { AlignItemsOption, HeightOption, ITheme, JustifyContentOption, PseudoCla
 
 import { BorderRadiusOption } from './interface/borderRadius';
 import { ThemeColor } from './interface/colors';
+import { PositionOption } from './interface/position';
 import { FontSizeOption, LineHeightOption } from './interface/text';
 import { WidthOption } from './interface/width';
 
@@ -9,11 +10,24 @@ type Field =
     'alignItems' |
     'backgroundColor' |
     'borderRadius' |
+    'bottom' |
     'color' |
     'fontSize' |
     'height' |
     'justifyContent' |
+    'left' |
     'lineHeight' |
+    'margin-bottom' |
+    'margin-left' |
+    'margin-right' |
+    'margin-top' |
+    'padding-bottom' |
+    'padding-left' |
+    'padding-right' |
+    'padding-top' |
+    'position' |
+    'right' |
+    'top' |
     'width'
 
 export function choose(fieldId: Field, { theme, defaults = {}, custom = {}}: { theme: any, defaults?: any, custom?: any }): string {
@@ -23,10 +37,23 @@ export function choose(fieldId: Field, { theme, defaults = {}, custom = {}}: { t
         case 'borderRadius': return chooseBorderRadius(theme, defaults.borderRadius, custom.borderRadius);
         case 'color': return chooseColor(theme, defaults.color, custom.color);
         case 'fontSize': return chooseFontSize(theme, defaults.fontSize, custom.fontSize);
-        case 'justifyContent': return chooseJustifyContent(theme, defaults.justifyContent, custom.justifyContent);
         case 'height': return chooseHeight(theme, defaults.height, custom.height);
+        case 'justifyContent': return chooseJustifyContent(theme, defaults.justifyContent, custom.justifyContent);
         case 'lineHeight': return chooseLineHeight(theme, defaults.lineHeight, custom.lineHeight);
+        case 'position': return choosePosition(defaults.position, custom.position);
+        case 'top': return genChoose('top', defaults.top, custom.top);
+        case 'bottom': return genChoose('bottom', defaults.bottom, custom.bottom);
+        case 'right': return genChoose('right', defaults.right, custom.right);
+        case 'left': return genChoose('left', defaults.left, custom.left);
         case 'width': return chooseWidth(theme, defaults.width, custom.width);
+        case 'margin-bottom': return genChoose(fieldId, defaults.marginBottom, custom.marginBottom);
+        case 'margin-left': return genChoose(fieldId, defaults.marginLeft, custom.marginLeft);
+        case 'margin-right': return genChoose(fieldId, defaults.marginRight, custom.marginRigth);
+        case 'margin-top': return genChoose(fieldId, defaults.marginTop, custom.marginTop);
+        case 'padding-bottom': return genChoose(fieldId, defaults.paddingBottom, custom.paddingBottom);
+        case 'padding-left': return genChoose(fieldId, defaults.paddingLeft, custom.paddingLeft);
+        case 'padding-right': return genChoose(fieldId, defaults.paddingRight, custom.paddingRight);
+        case 'padding-top': return genChoose(fieldId, defaults.paddingTop, custom.paddingTop);
         default: return '';
     }
 }
@@ -92,14 +119,39 @@ export function chooseHeight(theme: any, defaultHeight?: HeightOption, customHei
     return height ? `height: ${theme.sizing.height[height]};` : '';
 }
 
-export function chooseLineHeight(theme: any, defaults: LineHeightOption, custom: LineHeightOption): string {
+export function chooseLineHeight(theme: any, defaults?: LineHeightOption, custom?: LineHeightOption): string {
     const lineHeightChoice = custom || defaults;
     return lineHeightChoice ? `line-height ${theme.text.lineHeight[lineHeightChoice]};` : '';
 }
 
-export function chooseFontSize(theme: any, defaults: FontSizeOption, custom: FontSizeOption): string {
+export function chooseFontSize(theme: any, defaults?: FontSizeOption, custom?: FontSizeOption): string {
     const fontSizeChoice = custom || defaults;
     return fontSizeChoice ? `font-size: ${theme.text.fontSize[fontSizeChoice]};` : '';
+}
+
+export function choosePosition(defaults?: PositionOption, custom?: PositionOption): string {
+    const positionChoice = custom || defaults;
+    return positionChoice ? `position: ${positionChoice};` : '';
+}
+
+export function chooseTop(defaults?: string, custom?: string): string {
+    const choice = custom || defaults;
+    return choice ? `top: ${choice};` : '';
+}
+
+export function chooseBottom(defaults?: string, custom?: string): string {
+    const choice = custom || defaults;
+    return choice ? `bottom: ${choice};` : '';
+}
+
+export function chooseRight(defaults?: string, custom?: string): string {
+    const choice = custom || defaults;
+    return choice ? `bottom: ${choice};` : '';
+}
+
+export function genChoose(field: Field, defaults?: string, custom?: string): string {
+    const choice = custom || defaults;
+    return choice ? `${field}: ${choice};` : '';
 }
 
 // how to make helper function signatures generic?

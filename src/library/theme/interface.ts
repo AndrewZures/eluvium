@@ -19,6 +19,7 @@ export type PseudoClass =
 export type HeightOption =
     'full' |
     'small' |
+    'inherit' |
     'input' |
     'tiny' |
     'mini'
@@ -36,6 +37,7 @@ export interface ISizing {
     height: {
         full: string;
         small: string;
+        inherit: string;
         input: string;
         tiny: string;
         mini: string;

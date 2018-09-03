@@ -1,6 +1,6 @@
 import { IconConfig } from "../types";
 
 export const defaults: Partial<IconConfig> = {
-    height: 'mini',
-    width: 'mini',
+    height: 'inherit',
+    width: 'inherit',
 }

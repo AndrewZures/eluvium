@@ -8,7 +8,7 @@ import { RawTextInput } from './RawTextInput';
 // options
 import { minimalConfig } from './predefined/minimal';
 
-interface ITextInputProps extends Partial<ITextInputConfig> {
+export interface ITextInputProps extends Partial<ITextInputConfig> {
     custom?: Partial<ITextInputConfig>;
     placeholder?: string;
     type?: TextInputType;
@@ -17,7 +17,7 @@ interface ITextInputProps extends Partial<ITextInputConfig> {
 
 export class TextInput extends React.PureComponent<ITextInputProps> {
 
-    private options: { [key: string]: ITextInputConfig } = {
+    private options: { [key: string]: Partial<ITextInputConfig> } = {
         'minimal': minimalConfig,
     }
 

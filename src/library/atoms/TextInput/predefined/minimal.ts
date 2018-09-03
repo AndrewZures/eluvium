@@ -12,4 +12,4 @@ export const minimalOption: Partial<ITextInputConfig> = {
     width: 'input',
 }
 
-export const minimalConfig: ITextInputConfig = {...defaults, ...minimalOption};
+export const minimalConfig = {...defaults, ...minimalOption};

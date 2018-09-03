@@ -6,6 +6,7 @@ import { IconConfig } from './types';
 export interface IRawIconProps extends IRawInterface<IconConfig> {
     src: string;
     alt?: string;
+    onClick?: () => void;
 }
 
 export class RawIcon extends React.PureComponent<IRawIconProps> {
@@ -19,6 +20,15 @@ const style: styleFn<IconConfig> = data => {
         display: block;
         ${choose('width', data)}
         ${choose('height', data)}
+        ${choose('position', data)}
+        ${choose('top', data)}
+        ${choose('right', data)}
+        ${choose('left', data)}
+        ${choose('bottom', data)}
+        ${choose('margin-left', data)}
+        ${choose('margin-right', data)}
+        ${choose('margin-bottom', data)}
+        ${choose('margin-top', data)}
     `;
 }
 

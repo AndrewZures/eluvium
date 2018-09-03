@@ -47,6 +47,7 @@ export const defaultTheme: ITheme = {
         },
         height: {
             full: '500px',
+            inherit: 'inherit',
             input: '36px',
             mini: '20px',
             small: '400px',
@@ -67,6 +68,7 @@ export const defaultTheme: ITheme = {
         width: {
             full: '100%',
             half_screen: '50%',
+            inherit: 'inherit',
             input: '400px',
             main_content: '600px',
             mini: '20px',

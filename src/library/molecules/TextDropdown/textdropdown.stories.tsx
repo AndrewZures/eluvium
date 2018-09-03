@@ -9,16 +9,11 @@
 //   .add("default", () => (
 //     <ThemeProvider theme={defaultTheme}>
 //       <TextDropdown
-//         placeholder="Placeholder"
-//         type="standard"
-//       />
-//     </ThemeProvider>
-//   ))
-//   .add("minimal", () => (
-//     <ThemeProvider theme={defaultTheme}>
-//       <TextDropdown
-//         placeholder="Placeholder"
-//         type="minimal"
+//         text={{ placeholder: 'Select' }}
+//         icon={{
+//             onClick: () => window.console.log('hi'),
+//             src: './we-have-moved-truck.svg',
+//         }}
 //       />
 //     </ThemeProvider>
 //   ))

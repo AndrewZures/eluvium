@@ -3,14 +3,16 @@ export interface IWidth {
     half_screen: string;
     main_content: string;
     small: string;
+    inherit: string,
     input: string;
     mini: string;
 }
 
 export type WidthOption =
-    'small' |
     'full' |
     'half_screen' |
-    'main_content' |
+    'inherit' |
     'input' |
-    'mini'
+    'main_content' |
+    'mini' |
+    'small'
