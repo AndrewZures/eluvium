@@ -1,8 +1,7 @@
 import { ITextConfig } from '../types';
 
 const defaultHover: Partial<ITextConfig> = {
-    color: 'error',
-    fontSize: 'large',
+    color: 'secondary',
 }
 
 export const defaults: Partial<ITextConfig> = {

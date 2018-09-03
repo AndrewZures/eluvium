@@ -1,6 +1,5 @@
 import { AlignItemsOption, BoxShadowOption, HeightOption, ITheme, JustifyContentOption, PseudoClass } from './interface';
 
-import { ThemedStyledProps } from 'styled-components';
 import { BorderRadiusOption } from './interface/borderRadius';
 import { ThemeColor } from './interface/colors';
 import { FontSizeOption, LineHeightOption } from './interface/text';
@@ -32,15 +31,19 @@ export function choose(fieldId: Field, { theme, defaults = {}, custom = {}}: { t
     }
 }
 
-export function choose3(fieldId: Field, theme: any, defaults?: any, custom?: any): string {
+export function choose3(fieldId: Field, theme: ITheme, defaults?: any, custom?: any): string {
     return choose(fieldId, { theme, defaults, custom });
 }
 
-export interface IStandardRawInterface<T> {
+export interface IRawInterface<T> {
     defaults?: Partial<T>;
     custom?: Partial<T>;
 }
-export type styleFn<T> = (theme: ITheme, defaults?: Partial<T>, custom?: Partial<T>) => string;
+
+export interface IStyleData<T> { theme: ITheme, defaults?: Partial<T>, custom?: Partial<T>};
+export type styleFn<T> = ({ theme, custom, defaults }: IStyleData<T>) => string;
+export type styleFn2<T> = (theme: ITheme, defaults?: Partial<T>, custom?: Partial<T>) => string;
+// }
 
 // function pseudoClass(key: PseudoClass, props: ThemedStyledProps<IRawTextProps, ITheme>) {
 //     const custom = props.custom && props.custom[key];
@@ -48,10 +51,20 @@ export type styleFn<T> = (theme: ITheme, defaults?: Partial<T>, custom?: Partial
 //     return custom || defaults ? `&:${key} { ${styleText(props.theme, defaults, custom) } }` : '';
 // }
 
-export function pseudoClass<RawProps extends IStandardRawInterface<Config>, Config>(key: PseudoClass, fn: styleFn<Config>, props: ThemedStyledProps<RawProps, ITheme>) {
-    const custom = props.custom && props.custom[key];
-    const defaults = props.defaults && props.defaults[key];
-    return custom || defaults ? `&:${key} { ${fn(props.theme, defaults, custom) } }` : '';
+// export function pseudoClass<P extends IRawInterface<C>, C>(key: PseudoClass, fn: styleFn<C>, props: ThemedStyledProps<P, ITheme>) {
+//     const custom = props.custom && props.custom[key];
+//     const defaults = props.defaults && props.defaults[key];
+//     return custom || defaults ? `&:${key} { ${fn(props.theme, defaults, custom) } }` : '';
+// }
+
+export function pseudoClass<P extends IRawInterface<C>, C>(
+    key: PseudoClass,
+    fn: styleFn<C>,
+    { theme, custom: c, defaults: d }: { theme: ITheme, custom?: Partial<C>, defaults?: Partial<C>}
+) {
+    const custom = c && c[key];
+    const defaults = d && d[key];
+    return custom || defaults ? `&:${key} { ${fn({theme, defaults, custom}) } }` : '';
 }
 
 export function chooseBorderRadius(theme: any, defaultRadius: BorderRadiusOption, configRadius: BorderRadiusOption): string {

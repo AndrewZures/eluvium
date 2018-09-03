@@ -13,8 +13,7 @@ interface ITextProps {
 
 export class Text extends React.PureComponent<ITextProps> {
 
-    private options: { [key: string]: ITextConfig } = {
-    }
+    private options: { [key: string]: ITextConfig } = {}
 
     public render() {
         return (
