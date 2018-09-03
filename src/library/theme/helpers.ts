@@ -1,4 +1,4 @@
-import { AlignItemsOption, BoxShadowOption, HeightOption, ITheme, JustifyContentOption, PseudoClass } from './interface';
+import { AlignItemsOption, HeightOption, ITheme, JustifyContentOption, PseudoClass } from './interface';
 
 import { BorderRadiusOption } from './interface/borderRadius';
 import { ThemeColor } from './interface/colors';
@@ -19,7 +19,7 @@ type Field =
 export function choose(fieldId: Field, { theme, defaults = {}, custom = {}}: { theme: any, defaults?: any, custom?: any }): string {
     switch(fieldId) {
         case 'alignItems': return chooseAlignItems(theme, defaults.alignItems, custom.alignItems);
-        case 'backgroundColor': return chooseBackgroundColor2(theme, defaults.backgroundColor, custom.backgroundColor);
+        case 'backgroundColor': return chooseBackgroundColor(theme, defaults.backgroundColor, custom.backgroundColor);
         case 'borderRadius': return chooseBorderRadius(theme, defaults.borderRadius, custom.borderRadius);
         case 'color': return chooseColor(theme, defaults.color, custom.color);
         case 'fontSize': return chooseFontSize(theme, defaults.fontSize, custom.fontSize);
@@ -61,7 +61,7 @@ export function pseudoClass<P extends IRawInterface<C>, C>(
     key: PseudoClass,
     fn: styleFn<C>,
     { theme, custom: c, defaults: d }: { theme: ITheme, custom?: Partial<C>, defaults?: Partial<C>}
-) {
+): string {
     const custom = c && c[key];
     const defaults = d && d[key];
     return custom || defaults ? `&:${key} { ${fn({theme, defaults, custom}) } }` : '';
@@ -110,31 +110,7 @@ export function chooseColor(theme: any, defaultColor?: ThemeColor, customColor?:
     return color ? `color: ${theme.colors[color]};` : '';
 }
 
-export function oldChooseColor({ theme, color }: { theme: any, color: ThemeColor | undefined }) {
-    return theme.colors[color!] || "primary"
-}
-
-export function chooseBackgroundColor2(theme: any, defaultColor?: ThemeColor, customColor?: ThemeColor): string {
+export function chooseBackgroundColor(theme: any, defaultColor?: ThemeColor, customColor?: ThemeColor): string {
     const color = customColor || defaultColor;
     return color ? `background-color: ${theme.colors[color]};` : '';
-}
-
-export function chooseBackgroundColor({ theme, backgroundColor }: { theme: any, backgroundColor: ThemeColor }) {
-    return chooseColor({theme, color: backgroundColor});
-}
-
-export function oldChooseBorderRadius({ theme, borderRadius }: { theme: any, borderRadius:  BorderRadiusOption }) {
-    return theme.sizing.borderRadius[borderRadius];
-}
-
-// export function chooseFontSize({ theme, fontSize }: { theme: any, fontSize: FontSizeOption }) {
-//     return theme.text.fontSize[fontSize];
-// }
-
-// export function chooseLineHeight({ theme, lineHeight }: { theme: any, lineHeight: LineHeightOption }) {
-//     return theme.text.lineHeight[lineHeight];
-// }
-
-export function chooseBoxShadow({ theme, boxShadow }: { theme: any, boxShadow: BoxShadowOption }) {
-    return theme.sizing.boxShadow[boxShadow]
 }
