@@ -4,7 +4,7 @@ import { ITextConfig } from './types';
 // options
 import { RawText } from './RawText';
 
-import { defaultHover, defaults } from './predefined/defaults';
+import { defaults } from './predefined/defaults';
 
 interface ITextProps {
     type?: string;
@@ -21,9 +21,6 @@ export class Text extends React.PureComponent<ITextProps> {
             <RawText
                 defaults={this.options[this.props.type!] || defaults}
                 custom={this.props.custom || {}}
-                hover={{
-                    defaults: defaultHover
-                }}
             >
                 {this.props.children}
             </RawText>

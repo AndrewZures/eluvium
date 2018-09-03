@@ -31,6 +31,10 @@ export function choose(fieldId: Field, { theme, defaults = {}, custom = {}}: { t
     }
 }
 
+export function choose3(fieldId: Field, theme: any, defaults?: any, custom?: any): string {
+    return choose(fieldId, { theme, defaults, custom });
+}
+
 export function chooseBorderRadius(theme: any, defaultRadius: BorderRadiusOption, configRadius: BorderRadiusOption): string {
     const borderRadius = configRadius || defaultRadius;
     return borderRadius ? `border-radius: ${theme.sizing.borderRadius[borderRadius]};` : '';

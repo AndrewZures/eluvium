@@ -10,6 +10,12 @@ export interface ITheme {
     text: IText;
 }
 
+// css selector needs to be moved but okay here for now
+export type PseudoClass =
+    'hover' |
+    'active' |
+    'focus'
+
 export type HeightOption =
     'full' |
     'small' |

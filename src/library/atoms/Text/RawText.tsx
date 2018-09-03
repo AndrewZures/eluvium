@@ -3,13 +3,12 @@ import styled, { ThemedStyledProps } from 'styled-components';
 import { ITextConfig } from './types';
 
 // helpers
-import { choose } from '../../theme/helpers';
-import { ITheme } from '../../theme/interface';
+import { choose3 } from '../../theme/helpers';
+import { ITheme, PseudoClass } from '../../theme/interface';
 
 interface IRawTextProps {
     defaults?: Partial<ITextConfig>;
     custom?: Partial<ITextConfig>;
-    hover?: Partial<IRawTextProps>;
 }
 
 export class RawText extends React.PureComponent<IRawTextProps> {
@@ -19,7 +18,6 @@ export class RawText extends React.PureComponent<IRawTextProps> {
             <StyledText
                 defaults={this.props.defaults}
                 custom={this.props.custom}
-                hover={this.props.hover}
             >
                 {this.props.children}
             </StyledText>
@@ -27,26 +25,28 @@ export class RawText extends React.PureComponent<IRawTextProps> {
     }
 }
 
-function hover(props: ThemedStyledProps<IRawTextProps, ITheme>) {
-    return props.hover ? `&:hover { ${styleText({ theme: props.theme, ...props.hover}) } }` : '';
+function selector(key: PseudoClass, props: ThemedStyledProps<IRawTextProps, ITheme>) {
+    const custom = props.custom && props.custom[key];
+    const defaults = props.defaults && props.defaults[key];
+    return custom || defaults ? `&:${key} { ${styleText(props.theme, defaults, custom) } }` : '';
 }
 
-function styleText(props: ThemedStyledProps<IRawTextProps, ITheme>) {
-    debugger;
+function styleText(theme: ITheme, defaults?: Partial<ITextConfig>, custom?: Partial<ITextConfig>) {
     return `
         box-sizing: border-box;
         font-family: sans-serif;
         font-weight: 600;
         padding: 0 0 8px 0;
-        ${choose('lineHeight', props)}
-        ${choose('color', props)}
-        ${choose('fontSize', props)}
-        ${choose('backgroundColor', props)}
-        ${choose('width', props)}
+        ${choose3('lineHeight', theme, defaults, custom)}
+        ${choose3('color', theme, defaults, custom)}
+        ${choose3('fontSize', theme, defaults, custom)}
+        ${choose3('backgroundColor', theme, defaults, custom)}
+        ${choose3('width', theme, defaults, custom)}
     `;
 }
 
 const StyledText = styled.div.attrs<IRawTextProps>({ type: 'text' })`
-    ${styleText}
-    ${hover}
+    ${ props => styleText(props.theme, props.defaults, props.custom) }
+    ${ props => selector('hover', props)}
+    ${ props => selector('focus', props)}
 `
