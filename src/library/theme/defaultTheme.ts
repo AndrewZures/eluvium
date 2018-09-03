@@ -73,6 +73,7 @@ export const defaultTheme: ITheme = {
     },
     text: {
         fontSize: {
+            large: '24px',
             medium: '16px',
         },
         lineHeight: {

@@ -1,18 +1,13 @@
 import * as React from 'react';
-import styled, { ThemedStyledProps } from 'styled-components';
+import styled from 'styled-components';
 import { ITextConfig } from './types';
 
 // helpers
-import { choose3 } from '../../theme/helpers';
-import { ITheme, PseudoClass } from '../../theme/interface';
+import { choose3, IStandardRawInterface, pseudoClass, styleFn } from '../../theme/helpers';
 
-interface IRawTextProps {
-    defaults?: Partial<ITextConfig>;
-    custom?: Partial<ITextConfig>;
-}
+export type IRawTextProps = IStandardRawInterface<ITextConfig>;
 
 export class RawText extends React.PureComponent<IRawTextProps> {
-
     public render() {
         return (
             <StyledText
@@ -25,13 +20,7 @@ export class RawText extends React.PureComponent<IRawTextProps> {
     }
 }
 
-function selector(key: PseudoClass, props: ThemedStyledProps<IRawTextProps, ITheme>) {
-    const custom = props.custom && props.custom[key];
-    const defaults = props.defaults && props.defaults[key];
-    return custom || defaults ? `&:${key} { ${styleText(props.theme, defaults, custom) } }` : '';
-}
-
-function styleText(theme: ITheme, defaults?: Partial<ITextConfig>, custom?: Partial<ITextConfig>) {
+const styleText: styleFn<ITextConfig> = (theme, defaults, custom) => {
     return `
         box-sizing: border-box;
         font-family: sans-serif;
@@ -47,6 +36,6 @@ function styleText(theme: ITheme, defaults?: Partial<ITextConfig>, custom?: Part
 
 const StyledText = styled.div.attrs<IRawTextProps>({ type: 'text' })`
     ${ props => styleText(props.theme, props.defaults, props.custom) }
-    ${ props => selector('hover', props)}
-    ${ props => selector('focus', props)}
+    ${ props => pseudoClass<IRawTextProps, ITextConfig>('hover', styleText, props)}
+    ${ props => pseudoClass<IRawTextProps, ITextConfig>('focus', styleText, props)}
 `

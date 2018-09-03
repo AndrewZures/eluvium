@@ -17,8 +17,10 @@ export type LineHeightOption =
 // Font Size
 
 export interface IFontSize {
+    large: string;
     medium: string;
 }
 
 export type FontSizeOption =
-   'medium'
+   'medium' |
+   'large'
