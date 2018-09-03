@@ -25,13 +25,9 @@ export class TextInput extends React.PureComponent<ITextInputProps> {
         return (
             <RawTextInput
                 {...this.props}
-                defaults={this.getOptions()}
+                defaults={this.options[this.props.type!] || defaults}
                 custom={this.props.custom || {}}
             />
         );
-    }
-
-    private getOptions() {
-        return this.options[this.props.type!] || defaults;
     }
 }

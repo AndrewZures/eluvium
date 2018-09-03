@@ -48,6 +48,7 @@ export const defaultTheme: ITheme = {
         height: {
             full: '500px',
             input: '36px',
+            mini: '20px',
             small: '400px',
             tiny: '80px',
         },
@@ -68,6 +69,7 @@ export const defaultTheme: ITheme = {
             half_screen: '50%',
             input: '400px',
             main_content: '600px',
+            mini: '20px',
             small: '56px',
         },
     },

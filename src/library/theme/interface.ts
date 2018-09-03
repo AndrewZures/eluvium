@@ -20,7 +20,8 @@ export type HeightOption =
     'full' |
     'small' |
     'input' |
-    'tiny'
+    'tiny' |
+    'mini'
 
 export type InputHeightOption =
     'medium'
@@ -37,6 +38,7 @@ export interface ISizing {
         small: string;
         input: string;
         tiny: string;
+        mini: string;
     },
     inputSizing: {
         height: {

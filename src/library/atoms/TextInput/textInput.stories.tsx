@@ -11,11 +11,11 @@ storiesOf("Library/Atoms/TextInput", module)
       <TextInput placeholder="Placeholder" />
     </ThemeProvider>
   ))
-  .add("minimal", () => (
-    <ThemeProvider theme={defaultTheme}>
-      <TextInput
-        placeholder="Placeholder"
-        type="minimal"
-      />
-    </ThemeProvider>
-  ))
+  // .add("minimal", () => (
+  //   <ThemeProvider theme={defaultTheme}>
+  //     <TextInput
+  //       placeholder="Placeholder"
+  //       type="minimal"
+  //     />
+  //   </ThemeProvider>
+  // ))
