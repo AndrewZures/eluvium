@@ -6,22 +6,26 @@ import { FontSizeOption, LineHeightOption } from './interface/text';
 import { WidthOption } from './interface/width';
 
 type Field =
-    'height' |
-    'backgroundColor' |
-    'color' |
-    'width' |
-    'borderRadius' |
     'alignItems' |
-    'justifyContent'
+    'backgroundColor' |
+    'borderRadius' |
+    'color' |
+    'fontSize' |
+    'height' |
+    'justifyContent' |
+    'lineHeight' |
+    'width'
 
-export function choose(fieldId: Field, { theme, defaults, custom }: { theme: any, defaults: any, custom: any }): string {
+export function choose(fieldId: Field, { theme, defaults = {}, custom = {}}: { theme: any, defaults?: any, custom?: any }): string {
     switch(fieldId) {
         case 'alignItems': return chooseAlignItems(theme, defaults.alignItems, custom.alignItems);
         case 'backgroundColor': return chooseBackgroundColor2(theme, defaults.backgroundColor, custom.backgroundColor);
         case 'borderRadius': return chooseBorderRadius(theme, defaults.borderRadius, custom.borderRadius);
         case 'color': return chooseColor(theme, defaults.color, custom.color);
+        case 'fontSize': return chooseFontSize(theme, defaults.fontSize, custom.fontSize);
         case 'justifyContent': return chooseJustifyContent(theme, defaults.justifyContent, custom.justifyContent);
         case 'height': return chooseHeight(theme, defaults.height, custom.height);
+        case 'lineHeight': return chooseLineHeight(theme, defaults.lineHeight, custom.lineHeight);
         case 'width': return chooseWidth(theme, defaults.width, custom.width);
         default: return '';
     }
@@ -52,6 +56,16 @@ export function chooseHeight(theme: any, defaultHeight?: HeightOption, customHei
     return height ? `height: ${theme.sizing.height[height]};` : '';
 }
 
+export function chooseLineHeight(theme: any, defaults: LineHeightOption, custom: LineHeightOption): string {
+    const lineHeightChoice = custom || defaults;
+    return lineHeightChoice ? `line-height ${theme.text.lineHeight[lineHeightChoice]};` : '';
+}
+
+export function chooseFontSize(theme: any, defaults: FontSizeOption, custom: FontSizeOption): string {
+    const fontSizeChoice = custom || defaults;
+    return fontSizeChoice ? `font-size: ${theme.text.fontSize[fontSizeChoice]};` : '';
+}
+
 // how to make helper function signatures generic?
 // type IHelperFn<T> = (theme: any, defaultChioce: T, customChoice: T) => string; 
 
@@ -77,13 +91,13 @@ export function oldChooseBorderRadius({ theme, borderRadius }: { theme: any, bor
     return theme.sizing.borderRadius[borderRadius];
 }
 
-export function chooseFontSize({ theme, fontSize }: { theme: any, fontSize: FontSizeOption }) {
-    return theme.text.fontSize[fontSize];
-}
+// export function chooseFontSize({ theme, fontSize }: { theme: any, fontSize: FontSizeOption }) {
+//     return theme.text.fontSize[fontSize];
+// }
 
-export function chooseLineHeight({ theme, lineHeight }: { theme: any, lineHeight: LineHeightOption }) {
-    return theme.text.lineHeight[lineHeight];
-}
+// export function chooseLineHeight({ theme, lineHeight }: { theme: any, lineHeight: LineHeightOption }) {
+//     return theme.text.lineHeight[lineHeight];
+// }
 
 export function chooseBoxShadow({ theme, boxShadow }: { theme: any, boxShadow: BoxShadowOption }) {
     return theme.sizing.boxShadow[boxShadow]
