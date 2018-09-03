@@ -26,7 +26,7 @@ export class TextWithIcon extends React.PureComponent<ITextWithIconProps> {
         custom: {
             height: 'mini',
             position: 'absolute',
-            right: '12px',
+            right: '16px',
             top: this.calcLeftLocation().top,
             width: 'mini',
         }
@@ -34,13 +34,13 @@ export class TextWithIcon extends React.PureComponent<ITextWithIconProps> {
 
     private textLeftPosition: Partial<ITextInputProps> = {
         custom: {
-            paddingLeft: '44px',
+            paddingLeft: '52px',
         }
     }
 
     private textRightPosition: Partial<ITextInputProps> = {
         custom: {
-            paddingRight: '44px',
+            paddingRight: '52px',
         }
     }
 
@@ -69,7 +69,7 @@ export class TextWithIcon extends React.PureComponent<ITextWithIconProps> {
         const ih = this.convertStrToInt("20px")
 
         const ch = (h / 2) - (ih / 2);
-        return { top: `${ch}px`, left: '12px' }
+        return { top: `${ch}px`, left: '16px' }
     }
 
     private convertStrToInt(str: string): number {

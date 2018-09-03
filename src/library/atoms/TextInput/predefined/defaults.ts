@@ -6,5 +6,6 @@ export const defaults: Partial<ITextInputConfig> = {
     color: 'primary',
     fontSize: 'medium',
     height: 'inherit',
+    paddingLeft: '12px',
     width: 'inherit',
 }

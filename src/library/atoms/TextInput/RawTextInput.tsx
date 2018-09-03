@@ -20,7 +20,6 @@ const style: styleFn<ITextInputConfig> = data => {
     return `
         display: flex;
         box-sizing: border-box;
-        padding: 0 8px;
         border: 1px solid #D1D7E0;
         ${choose('lineHeight', data)}
         ${choose('color', data)}
