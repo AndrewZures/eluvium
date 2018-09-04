@@ -28,6 +28,7 @@ type Field =
     'position' |
     'right' |
     'top' |
+    'transform' |
     'width'
 
 export function choose(fieldId: Field, { theme, defaults = {}, custom = {}}: { theme: any, defaults?: any, custom?: any }): string {
@@ -54,6 +55,7 @@ export function choose(fieldId: Field, { theme, defaults = {}, custom = {}}: { t
         case 'padding-left': return genChoose(fieldId, defaults.paddingLeft, custom.paddingLeft);
         case 'padding-right': return genChoose(fieldId, defaults.paddingRight, custom.paddingRight);
         case 'padding-top': return genChoose(fieldId, defaults.paddingTop, custom.paddingTop);
+        case 'transform': return genChoose(fieldId, defaults.transform, custom.transform);
         default: return '';
     }
 }

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ITextInputConfig, TextInputType } from './types';
 
-import { defaults } from './predefined/defaults';
+import { defaults, leftIcon, rightIcon } from './predefined/defaults';
 
 import { RawTextInput } from './RawTextInput';
 
@@ -18,7 +18,9 @@ export interface ITextInputProps extends Partial<ITextInputConfig> {
 export class TextInput extends React.PureComponent<ITextInputProps> {
 
     private options: { [key: string]: Partial<ITextInputConfig> } = {
+        'leftIcon': leftIcon,
         'minimal': minimalConfig,
+        'rightIcon': rightIcon,
     }
 
     public render() {

@@ -10,8 +10,8 @@ storiesOf("Library/Molecules/TextDropdown", module)
     return (
     <ThemeProvider theme={defaultTheme}>
       <TextDropdown
-        text={{ placeholder: 'Select' }}
-        icon={{ src: './we-have-moved-truck.svg' }}
+        text={{ placeholder: 'Select', type: 'leftIcon', custom: { width: 'input', height: 'input' }}}
+        icon={{ type: 'leftInput', src: './we-have-moved-truck.svg' }}
       >
         <div>
             Howdy

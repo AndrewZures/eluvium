@@ -14,6 +14,7 @@ export interface IconConfig {
     marginTop: string,
     marginLeft: string,
     marginRight: string,
+    transform: string,
     hover?: Partial<IconConfig>;
     focus?: Partial<IconConfig>;
 }

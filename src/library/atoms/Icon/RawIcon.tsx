@@ -29,6 +29,7 @@ const style: styleFn<IconConfig> = data => {
         ${choose('margin-right', data)}
         ${choose('margin-bottom', data)}
         ${choose('margin-top', data)}
+        ${choose('transform', data)}
     `;
 }
 

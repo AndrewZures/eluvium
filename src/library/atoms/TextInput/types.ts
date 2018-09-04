@@ -23,4 +23,6 @@ export interface ITextInputConfig {
 
 export type TextInputType =
     'minimal' |
-    'standard'
+    'standard' |
+    'leftIcon' |
+    'rightIcon'

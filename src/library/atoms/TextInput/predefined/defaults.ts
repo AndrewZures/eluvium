@@ -9,3 +9,14 @@ export const defaults: Partial<ITextInputConfig> = {
     paddingLeft: '12px',
     width: 'inherit',
 }
+
+const pLeftIcon: Partial<ITextInputConfig> = {
+    paddingLeft: '10%'
+}
+
+const pRightIcon: Partial<ITextInputConfig> = {
+    paddingRight: '10%'
+}
+
+export const leftIcon = {...defaults, ...pLeftIcon};
+export const rightIcon = {...defaults, ...pRightIcon}

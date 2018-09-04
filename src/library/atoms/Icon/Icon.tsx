@@ -4,17 +4,26 @@ import { IconConfig } from './types';
 
 import { RawIcon } from './RawIcon';
 
+// options
 import { defaults } from './predefined/defaults';
+import { leftInput, rightInput } from './predefined/leftInput';
+
+type IconType =
+    'leftInput' |
+    'rightInput'
 
 export interface IconProps extends IRawInterface<IconConfig> {
     src: string;
-    type?: string;
+    type?: IconType;
     alt?: string;
     onClick?: () => void;
 }
 
 export class Icon extends React.Component<IconProps> {
-    private options = {}
+    private options: { [key: string]: Partial<IconConfig> } = {
+        'leftInput': leftInput,
+        'rightInput': rightInput,
+    }
 
     public render() {
         return <RawIcon
@@ -25,10 +34,3 @@ export class Icon extends React.Component<IconProps> {
 
     }
 }
-// return <img src="./we-have-moved-truck.svg"
-//      alt="we've moved"
-//      height="20px"
-//      width="40px"
-//     //  style={{ display: "block", position: "absolute", top: this.calcIconHeight(36, 20), right: "16px" }}
-//      onClick={this.props.onClick}
-// />
